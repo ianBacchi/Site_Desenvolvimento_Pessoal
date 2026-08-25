@@ -1,0 +1,245 @@
+/* ============================================
+   CSS VARIABLES — KEYLA KIN BRAND SYSTEM
+   ============================================ */
+:root {
+  /* Core Palette */
+  --bg-primary:     #0d0b08;
+  --bg-secondary:   #131008;
+  --bg-card:        #1a1610;
+  --bg-card-hover:  #211d15;
+  --bg-section-alt: #100e08;
+
+  /* Gold Spectrum */
+  --gold-light:    #e8c96e;
+  --gold-primary:  #c9a84c;
+  --gold-mid:      #b8963e;
+  --gold-dark:     #9a7c30;
+  --gold-muted:    rgba(201,168,76,0.15);
+  --gold-border:   rgba(201,168,76,0.3);
+
+  /* Typography */
+  --text-white:    #f5f1e8;
+  --text-off:      #ccc4b0;
+  --text-muted:    #8a7f6a;
+
+  /* Fonts */
+  --font-serif:    'Cormorant Garamond', Georgia, serif;
+  --font-sans:     'Jost', system-ui, sans-serif;
+
+  /* Spacing */
+  --section-py:    96px;
+  --container-max: 1240px;
+  --container-px:  24px;
+
+  /* Transitions */
+  --ease:   cubic-bezier(0.4, 0, 0.2, 1);
+  --dur:    0.3s;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-white);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a   { text-decoration: none; color: inherit; }
+ul  { list-style: none; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+.serif    { font-family: var(--font-serif); }
+.gold     { color: var(--gold-primary); }
+.gold-light { color: var(--gold-light); }
+.muted    { color: var(--text-muted); }
+
+h1,h2,h3,h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+.section-py {
+  padding-block: var(--section-py);
+}
+
+/* ============================================
+   GOLD BADGE / EYEBROW LABEL
+   ============================================ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 18px;
+}
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold-primary);
+  opacity: 0.7;
+}
+
+/* ============================================
+   GOLD BUTTON
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all var(--dur) var(--ease);
+  white-space: nowrap;
+}
+
+.btn-gold {
+  background: var(--gold-primary);
+  color: var(--bg-primary);
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.35);
+}
+
+.btn-outline {
+  border: 1px solid var(--gold-border);
+  color: var(--gold-primary);
+  background: transparent;
+}
+.btn-outline:hover {
+  border-color: var(--gold-primary);
+  background: var(--gold-muted);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   GOLD DIVIDER LINE
+   ============================================ */
+.gold-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-primary), transparent);
+  margin-bottom: 24px;
+}
+
+/* ============================================
+   GEOMETRIC CHEVRON DECORATION (SVG inline via CSS)
+   ============================================ */
+.chevron-deco {
+  position: absolute;
+  opacity: 0.08;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ============================================
+   SECTION TITLE TEMPLATE
+   ============================================ */
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text-white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-off);
+  line-height: 1.7;
+  max-width: 540px;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 3px;
+}
+
+/* ============================================
+   ANIMATION UTILITIES
+   ============================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.anim-fade-up  { animation: fadeUp 0.7s var(--ease) both; }
+.anim-fade-in  { animation: fadeIn 0.6s var(--ease) both; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* ============================================
+   RESPONSIVE BASE
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --section-py: 64px;
+    --container-px: 20px;
+  }
+
+  .section-title {
+    font-size: clamp(1.7rem, 6vw, 2.4rem);
+  }
+}

@@ -1,0 +1,10 @@
+/* App.css — estilos globais adicionais (reset de herança do template padrão) */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}

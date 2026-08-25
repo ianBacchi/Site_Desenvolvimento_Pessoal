@@ -1,0 +1,122 @@
+.section {
+  background: var(--bg-secondary);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.header .section-title {
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 2px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.card:hover {
+  border-color: var(--gold-border);
+  transform: translateY(-3px);
+}
+
+.quoteIcon {
+  color: var(--gold-primary);
+  opacity: 0.6;
+}
+
+.text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-off);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.stars {
+  color: var(--gold-primary);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold-muted);
+  border: 1px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.role {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Photo strip */
+.photoStrip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.stripPhoto {
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid var(--gold-border);
+}
+
+.stripPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+
+.stripPhoto:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .photoStrip { grid-template-columns: repeat(2, 1fr); }
+}

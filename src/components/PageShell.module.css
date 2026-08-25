@@ -1,0 +1,59 @@
+.page {
+  padding-top: 80px; /* height do navbar fixo */
+}
+
+/* ── BANNER ──────────────────────────────── */
+.banner {
+  position: relative;
+  background:
+    linear-gradient(160deg, #0d0b08 0%, #131008 60%, #1a1610 100%);
+  border-bottom: 1px solid var(--gold-border);
+  padding-block: 72px 64px;
+  overflow: hidden;
+}
+
+.chevDeco {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 6px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.chevSvg {
+  width: 60px;
+  height: 100px;
+}
+
+.bannerInner {
+  max-width: 700px;
+}
+
+.bannerTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 600;
+  color: var(--text-white);
+  line-height: 1.12;
+  margin-bottom: 16px;
+}
+
+.bannerSub {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-off);
+  line-height: 1.7;
+  max-width: 540px;
+}
+
+/* ── CONTENT ─────────────────────────────── */
+.content {
+  /* cada seção interna define seu próprio background e padding */
+}
+
+@media (max-width: 768px) {
+  .banner { padding-block: 52px 44px; }
+}
