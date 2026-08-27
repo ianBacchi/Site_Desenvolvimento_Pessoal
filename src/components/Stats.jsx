@@ -1,10 +1,10 @@
 import styles from './Stats.module.css'
 
 const stats = [
-  { value: '+500',  label: 'VGV',             sub: 'Acelerado' },
-  { value: '+500',  label: 'Corretores',       sub: 'Formados' },
-  { value: '+50',   label: 'Imobiliárias',     sub: 'Atendidas' },
-  { value: '+50',   label: 'Treinamentos',     sub: 'Realizados' },
+  { value: '+500',  label: 'VGV' },
+  { value: '+500',  label: 'SUPLY' },
+  { value: '+50',   label: 'CORRETORES' },
+  { value: '+50',   label: 'MENTORADOS' },
 ]
 
 export default function Stats() {
@@ -14,10 +14,7 @@ export default function Stats() {
         {stats.map((s, i) => (
           <div key={i} className={styles.card}>
             <span className={styles.value}>{s.value}</span>
-            <div className={styles.labels}>
-              <span className={styles.label}>{s.label}</span>
-              <span className={styles.sub}>{s.sub}</span>
-            </div>
+            <span className={styles.label}>{s.label}</span>
           </div>
         ))}
       </div>

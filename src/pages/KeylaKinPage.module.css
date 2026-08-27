@@ -1,0 +1,344 @@
+.main {
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #000000;
+}
+
+.bgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%) brightness(0.6);
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-top: 120px;
+}
+
+.photoCol {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  max-width: 50%;
+  height: 100%;
+}
+
+.keylaPhoto {
+  max-height: 90vh;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+}
+
+.textBlock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 80px;
+  max-width: 600px;
+}
+
+.quoteText {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--gold-primary);
+  line-height: 1.2;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.heroLogo {
+  height: 90px;
+  width: auto;
+  opacity: 0.9;
+  filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.5));
+}
+
+/* BIO SECTION */
+.bioSection {
+  background: linear-gradient(to bottom, #d4b170 0%, #e3c792 50%, #d4b170 100%);
+  padding-block: 80px;
+  color: #000000;
+}
+
+.bioContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bioTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.bioText {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bioText strong {
+  font-weight: 800;
+}
+
+/* PURPOSE SECTION */
+.purposeSection {
+  background: #2a2117; /* Dark background matching the image */
+  padding-top: 60px;
+  padding-bottom: 0;
+}
+
+.statsContainer {
+  margin-bottom: 60px;
+}
+
+.statsRow {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.statValue {
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  font-style: italic;
+  color: var(--gold-primary);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--text-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.purposeContent {
+  display: flex;
+  align-items: center; /* Changed from flex-end */
+  justify-content: space-between;
+}
+
+.purposePhotoCol {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  max-width: 45%;
+}
+
+.purposePhoto {
+  max-height: 85vh;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom left;
+  display: block;
+}
+
+.purposeTextCol {
+  flex: 1;
+  padding-bottom: 40px;
+  max-width: 500px;
+}
+
+.purposeTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--gold-primary);
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.purposeText {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-white);
+  line-height: 1.6;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* LEADERSHIP SECTION */
+.leadershipSection {
+  background: linear-gradient(to right, #d4b170 0%, #b8963e 100%);
+  padding: 0; /* Handled by internal content */
+}
+
+.leadershipContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.leadershipTextCol {
+  flex: 1;
+  padding-block: 80px;
+  text-align: right; /* Aligned right according to image */
+}
+
+.leadershipTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: #1a1610;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.leadershipSubtitle {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1a1610;
+  line-height: 1.4;
+  margin-left: auto;
+  max-width: 380px;
+}
+
+.leadershipPhotoCol {
+  flex: 1;
+  height: 100%;
+  min-height: 400px; /* Match height of section */
+  position: relative;
+}
+
+.teamPhotoPlaceholder {
+  position: absolute;
+  inset: 0;
+  background: #a98d58; /* Slightly darker gold for placeholder */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+.placeholderText {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: #1a1610;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+  }
+  .heroContent {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 100px;
+  }
+  .photoCol {
+    max-width: 100%;
+    justify-content: center;
+  }
+  .keylaPhoto {
+    max-height: 60vh;
+  }
+  .textBlock {
+    padding-bottom: 40px;
+  }
+
+  .statsRow {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    gap: 40px;
+  }
+  .purposeContent {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .purposePhotoCol {
+    max-width: 100%;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .purposeTextCol {
+    text-align: center;
+    padding-bottom: 0;
+  }
+
+  .leadershipContainer {
+    flex-direction: column;
+    gap: 0;
+  }
+  .leadershipTextCol {
+    text-align: center;
+    padding-block: 60px;
+  }
+  .leadershipSubtitle {
+    margin: 0 auto;
+  }
+  .leadershipPhotoCol {
+    width: 100%;
+    min-height: 300px;
+  }
+}

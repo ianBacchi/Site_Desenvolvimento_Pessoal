@@ -1,69 +1,51 @@
-import { MessageCircle, ChevronDown } from 'lucide-react'
 import styles from './Hero.module.css'
+import cityBg from '../assets/city-bg.png'
+import keylaCutout from '../assets/keyla-cutout.png'
 
 export default function Hero() {
   return (
     <section id="home" className={styles.hero}>
-      {/* Dark overlay with texture */}
-      <div className={styles.overlay} />
-
-      {/* Geometric chevron decorations */}
-      <div className={styles.chevrons} aria-hidden="true">
-        <ChevronDecoration className={styles.chev1} />
-        <ChevronDecoration className={styles.chev2} />
-        <ChevronDecoration className={styles.chev3} />
+      {/* Background Image & Overlay */}
+      <div className={styles.bgWrap}>
+        <img src={cityBg} alt="Background" className={styles.bgImage} />
+        <div className={styles.bgOverlay} />
       </div>
 
-      {/* Placeholder photo column */}
-      <div className={styles.photoCol}>
-        <div className={styles.photoWrap}>
-          {/* Replace src with real Keyla photo */}
-          <img
-            src="https://placehold.co/600x900/1a1610/c9a84c?text=Keyla+Kin"
-            alt="Keyla Kin — Especialista em Mercado Imobiliário"
-            className={styles.photo}
-          />
-          <div className={styles.photoGold} />
-        </div>
-      </div>
-
-      {/* Text column */}
       <div className={`container ${styles.content}`}>
+        
+        {/* Photo on the left */}
+        <div className={styles.photoCol}>
+          <img
+            src={keylaCutout}
+            alt="Keyla Kin"
+            className={styles.keylaPhoto}
+          />
+        </div>
+
+        {/* Text on the right */}
         <div className={styles.textBlock}>
-          <p className={`eyebrow anim-fade-up`}>Especialista em Mercado Imobiliário</p>
-
-          <h1 className={`${styles.title} anim-fade-up delay-1`}>
-            Mentoria, curso e estratégia{' '}
-            <em className={styles.titleHighlight}>para acelerar resultados</em>{' '}
-            no mercado imobiliário.
+          <h1 className={`${styles.title} anim-fade-up`}>
+            KEYLA KIN
           </h1>
-
-          <p className={`${styles.subtitle} anim-fade-up delay-2`}>
-            Transforme sua imobiliária, sua equipe e sua carreira com método,
-            posicionamento e estratégia de quem vive o mercado há mais de 15 anos.
-          </p>
-
-          <div className={`${styles.ctas} anim-fade-up delay-3`}>
+          <div className={`${styles.subtitle} anim-fade-up delay-1`}>
+            <p>CEO Kin Imóveis Advogada</p>
+            <p>Corretora de Imóveis</p>
+            <p>Mentora</p>
+            <p>CRECI 131.693</p>
+          </div>
+          
+          <div className={`anim-fade-up delay-2`}>
             <a
               href="https://wa.me/5511999999999"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-gold"
             >
-              <MessageCircle size={16} />
-              Falar com a Keyla
-            </a>
-            <a href="#servicos" className="btn btn-outline">
-              Conhecer Soluções
+              ENTRE EM CONTATO
             </a>
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <a href="#numeros" className={styles.scroll} aria-label="Rolar para baixo">
-        <ChevronDown size={20} />
-      </a>
     </section>
   )
 }

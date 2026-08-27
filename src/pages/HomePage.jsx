@@ -12,11 +12,11 @@ export default function HomePage() {
     <>
       <main>
         <Hero />
+        <About /> {/* Quote section */}
         <Stats />
         <Services />
-        <About />
-        <Testimonials />
         <CTA />
+        <Testimonials />
       </main>
       <Footer />
       <WhatsApp />

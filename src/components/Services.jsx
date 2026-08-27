@@ -1,78 +1,64 @@
-import { ArrowRight } from 'lucide-react'
+import { Clock, Trophy, TrendingUp, Camera, Mic, BookOpen } from 'lucide-react'
 import styles from './Services.module.css'
 
-const services = [
+const experiences = [
   {
-    icon: '◆',
-    tag: 'Para Gestores e Donos',
-    title: 'Mentoria Estratégica',
-    desc: 'Acelere os resultados da sua imobiliária com método, gestão de equipe e posicionamento de alto padrão.',
-    href: '#mentoria',
-    featured: true,
+    icon: <Clock size={28} />,
+    title: 'Gestão Consolidada',
+    desc: 'Há 11 anos à frente da KIN Imóveis, liderando estratégias de expansão e consolidação no mercado.'
   },
   {
-    icon: '◈',
-    tag: 'Para Corretores',
-    title: 'Curso Online',
-    desc: 'Formação completa para corretores que querem escalar vendas, construir autoridade e atender clientes de alto padrão.',
-    href: '#curso',
-    featured: false,
+    icon: <Trophy size={28} />,
+    title: 'Liderança de Aceleração',
+    desc: 'Gestão, treinamento e supervisão direta de uma equipe de alta performance com 25 corretores de vendas.'
   },
   {
-    icon: '◇',
-    tag: 'Para Times e Convenções',
-    title: 'Palestras & Treinamentos',
-    desc: 'Conteúdo de alto impacto para eventos corporativos, convenções de vendas e treinamentos in-company.',
-    href: '#mentoria',
-    featured: false,
+    icon: <TrendingUp size={28} />,
+    title: 'Aumento de 40% no VGV',
+    desc: 'Histórico comprovado de crescimento expressivo no Valor Geral de Vendas no ciclo de 2024 a 2025.'
   },
   {
-    icon: '❖',
-    tag: 'Conhecimento & Autoridade',
-    title: 'Livros',
-    desc: 'Publicações com estratégias práticas e visão de mercado para profissionais do setor imobiliário.',
-    href: '#livros',
-    featured: false,
+    icon: <Camera size={28} />, // Using Camera as a placeholder for the icon in mockup
+    title: 'Alta Performance',
+    desc: 'Criadora do curso Alta Performance para Corretores, voltado para profissionais que buscam posicionamento forte e mais vendas.'
   },
+  {
+    icon: <Mic size={28} />,
+    title: 'Palestrante do Setor',
+    desc: 'Presença em eventos e encontros do setor, compartilhando tendências, estratégias práticas e experiências de mercado.'
+  },
+  {
+    icon: <BookOpen size={28} />,
+    title: 'Coautora & Autora',
+    desc: 'Coautora de 2 livros no mercado imobiliário, dedicada a compartilhar conhecimento, formar novos líderes e construir um legado.'
+  }
 ]
 
 export default function Services() {
   return (
-    <section id="servicos" className={`${styles.section} section-py`}>
-      {/* Geometric decoration */}
-      <div className={styles.decoRight} aria-hidden="true">
-        {[0,1,2].map(i => (
-          <svg key={i} viewBox="0 0 60 100" className={styles.decoSvg}>
-            <polyline points="5,5 30,50 5,95"  stroke="#c9a84c" strokeWidth="4" fill="none"/>
-            <polyline points="20,5 45,50 20,95" stroke="#c9a84c" strokeWidth="2" fill="none"/>
-          </svg>
-        ))}
-      </div>
-
-      <div className="container">
+    <section id="experiencia" className={`${styles.section} section-py`}>
+      <div className={`container ${styles.container}`}>
         <div className={styles.header}>
-          <div>
-            <p className="eyebrow">O que eu ofereço</p>
-            <h2 className="section-title">
-              Soluções para <em style={{ fontStyle: 'italic', color: 'var(--gold-primary)' }}>acelerar</em> sua carreira
-            </h2>
-          </div>
-          <p className="section-subtitle">
-            Cada solução foi desenvolvida para um momento específico da sua jornada no mercado imobiliário.
+          <h2 className={styles.sectionTitle}>
+            LIDERANÇA E RESULTADOS<br/>
+            COMPROVADOS NO MERCADO<br/>
+            IMOBILIÁRIO
+          </h2>
+          <p className={styles.sectionSubtitle}>
+            Estratégias validadas em gestão, liderança e alta<br/>
+            performance no mercado imobiliário.
           </p>
         </div>
 
         <div className={styles.grid}>
-          {services.map((s, i) => (
-            <a key={i} href={s.href} className={`${styles.card} ${s.featured ? styles.cardFeatured : ''}`}>
-              <span className={styles.cardIcon}>{s.icon}</span>
-              <span className={styles.cardTag}>{s.tag}</span>
-              <h3 className={styles.cardTitle}>{s.title}</h3>
-              <p className={styles.cardDesc}>{s.desc}</p>
-              <span className={styles.cardCta}>
-                Saiba mais <ArrowRight size={14} />
-              </span>
-            </a>
+          {experiences.map((exp, i) => (
+            <div key={i} className={`${styles.card} anim-fade-up`} style={{ animationDelay: `${i * 0.1}s` }}>
+              <div className={styles.cardHeader}>
+                <span className={styles.cardIcon}>{exp.icon}</span>
+                <h3 className={styles.cardTitle}>{exp.title}</h3>
+              </div>
+              <p className={styles.cardDesc}>{exp.desc}</p>
+            </div>
           ))}
         </div>
       </div>

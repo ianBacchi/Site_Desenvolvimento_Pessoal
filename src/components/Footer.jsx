@@ -1,5 +1,6 @@
 import { MessageCircle } from 'lucide-react'
 import styles from './Footer.module.css'
+import logoImg from '../assets/logo.png'
 
 const navCols = [
   {
@@ -81,8 +82,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div className={styles.brand}>
-            <div className={styles.logoMain}>KEYLA KIN</div>
-            <div className={styles.logoSub}>Estratégia Imobiliária</div>
+            <img src={logoImg} alt="Keyla Kin Logo" style={{ maxWidth: '150px' }} />
             <p className={styles.tagline}>
               Mentoria, curso e estratégia para quem quer resultados reais no mercado imobiliário.
             </p>
