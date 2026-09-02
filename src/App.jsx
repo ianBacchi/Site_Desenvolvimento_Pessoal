@@ -11,6 +11,8 @@ import MentoriaPage  from './pages/MentoriaPage'
 import CursoPage     from './pages/CursoPage'
 import LivrosPage    from './pages/LivrosPage'
 import BlogPage      from './pages/BlogPage'
+import BlogPostPage  from './pages/BlogPostPage'
+import MidiaPage     from './pages/MidiaPage'
 
 export default function App() {
   return (
@@ -28,6 +30,8 @@ export default function App() {
         <Route path="/curso"      element={<CursoPage />}    />
         <Route path="/livros"     element={<LivrosPage />}   />
         <Route path="/blog"       element={<BlogPage />}     />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/midia"      element={<MidiaPage />}    />
       </Routes>
     </HashRouter>
   )

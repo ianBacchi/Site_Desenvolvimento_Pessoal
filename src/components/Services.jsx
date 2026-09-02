@@ -34,31 +34,37 @@ const experiences = [
   }
 ]
 
+import Reveal from './Reveal'
+
 export default function Services() {
   return (
     <section id="experiencia" className={`${styles.section} section-py`}>
       <div className={`container ${styles.container}`}>
-        <div className={styles.header}>
-          <h2 className={styles.sectionTitle}>
-            LIDERANÇA E RESULTADOS<br/>
-            COMPROVADOS NO MERCADO<br/>
-            IMOBILIÁRIO
-          </h2>
-          <p className={styles.sectionSubtitle}>
-            Estratégias validadas em gestão, liderança e alta<br/>
-            performance no mercado imobiliário.
-          </p>
-        </div>
+        <Reveal delay={0.2}>
+          <div className={styles.header}>
+            <h2 className={styles.sectionTitle}>
+              LIDERANÇA E RESULTADOS<br/>
+              COMPROVADOS NO MERCADO<br/>
+              IMOBILIÁRIO
+            </h2>
+            <p className={styles.sectionSubtitle}>
+              Estratégias validadas em gestão, liderança e alta<br/>
+              performance no mercado imobiliário.
+            </p>
+          </div>
+        </Reveal>
 
         <div className={styles.grid}>
           {experiences.map((exp, i) => (
-            <div key={i} className={`${styles.card} anim-fade-up`} style={{ animationDelay: `${i * 0.1}s` }}>
-              <div className={styles.cardHeader}>
-                <span className={styles.cardIcon}>{exp.icon}</span>
-                <h3 className={styles.cardTitle}>{exp.title}</h3>
+            <Reveal key={i} delay={0.1 * i} direction="up" fullHeight={true}>
+              <div className={styles.card} style={{ height: '100%' }}>
+                <div className={styles.cardHeader}>
+                  <span className={styles.cardIcon}>{exp.icon}</span>
+                  <h3 className={styles.cardTitle}>{exp.title}</h3>
+                </div>
+                <p className={styles.cardDesc}>{exp.desc}</p>
               </div>
-              <p className={styles.cardDesc}>{exp.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

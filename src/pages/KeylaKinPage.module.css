@@ -143,8 +143,13 @@
 .statsRow {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
+  align-items: flex-start;
   gap: 30px;
+}
+
+.statsRow > * {
+  flex: 1;
+  min-width: 0;
 }
 
 .statItem {
@@ -258,13 +263,31 @@
   color: #1a1610;
   line-height: 1.4;
   margin-left: auto;
+  margin-bottom: 24px;
   max-width: 380px;
+}
+
+.leadershipText {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: #1a1610;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 400px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.leadershipText strong {
+  font-weight: 800;
 }
 
 .leadershipPhotoCol {
   flex: 1;
   height: 100%;
-  min-height: 400px; /* Match height of section */
+  min-height: 600px; /* Make it taller to fit the text */
   position: relative;
 }
 
@@ -275,7 +298,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 2px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
 .placeholderText {
@@ -286,7 +309,59 @@
   text-transform: uppercase;
 }
 
-/* RESPONSIVE */
+/* MENTORSHIP SECTION */
+.mentorshipSection {
+  background: linear-gradient(to right, #b8963e 0%, #d4b170 100%); /* Slightly different gradient */
+  padding: 0; 
+}
+
+.mentorshipContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.mentorshipTextCol {
+  flex: 1;
+  padding-block: 80px;
+  text-align: left; /* Aligned left according to image */
+}
+
+.mentorshipSubtitle {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1a1610;
+  line-height: 1.4;
+  margin-right: auto;
+  margin-bottom: 24px;
+  max-width: 380px;
+}
+
+.mentorshipText {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: #1a1610;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 460px;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mentorshipText strong {
+  font-weight: 800;
+}
+
+.mentorshipPhotoCol {
+  flex: 1;
+  height: 100%;
+  min-height: 600px;
+  position: relative;
+}
 @media (max-width: 900px) {
   .hero {
     min-height: auto;
@@ -326,19 +401,34 @@
     padding-bottom: 0;
   }
 
-  .leadershipContainer {
+  .leadershipContainer,
+  .mentorshipContainer {
     flex-direction: column;
     gap: 0;
   }
-  .leadershipTextCol {
+  
+  .leadershipTextCol,
+  .mentorshipTextCol {
     text-align: center;
     padding-block: 60px;
+    padding-inline: 20px;
   }
-  .leadershipSubtitle {
-    margin: 0 auto;
+  
+  .leadershipSubtitle,
+  .mentorshipSubtitle,
+  .leadershipText,
+  .mentorshipText {
+    margin-inline: auto;
   }
-  .leadershipPhotoCol {
+  
+  .leadershipPhotoCol,
+  .mentorshipPhotoCol {
     width: 100%;
-    min-height: 300px;
+    min-height: 400px;
+  }
+  
+  /* Reverse the order for the mentorship so the photo stays below the text on mobile (or on top, usually text then photo) */
+  .mentorshipContainer {
+    flex-direction: column-reverse;
   }
 }

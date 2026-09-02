@@ -1,0 +1,287 @@
+.main {
+  background: #fdfbf7; /* Light cream background for the lower half */
+  min-height: 100vh;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  background: #2a2a2a;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: #2b2b2b;
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-block: 120px 80px;
+  gap: 40px;
+}
+
+.heroPhotoCol {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.booksPlaceholder {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4 / 3;
+  background: rgba(212, 177, 112, 0.2);
+  border: 1px solid rgba(212, 177, 112, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.placeholderText {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--gold-primary);
+  opacity: 0.8;
+}
+
+.heroTextCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 500px;
+}
+
+.heroText {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--text-white);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.heroText strong {
+  font-weight: 800;
+}
+
+.heroBtn {
+  margin-top: 16px;
+  display: inline-block;
+  background: var(--gold-primary);
+  color: #fff;
+  padding: 12px 32px;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.heroBtn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* QUOTE SECTION */
+.quoteSection {
+  background: var(--gold-primary);
+  padding-block: 40px;
+  border-bottom: 2px solid #b8963e;
+}
+
+.quoteContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.quoteMark {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  font-weight: 800;
+  color: #2b2b2b;
+  line-height: 0;
+  position: relative;
+  top: 15px;
+}
+
+.quoteText {
+  font-family: var(--font-sans);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  font-style: italic;
+  color: #1a1610;
+  max-width: 800px;
+}
+
+/* BOOK SECTIONS */
+.bookSection {
+  padding-block: 80px 0; /* padding bottom 0 so the image can sit on the bottom edge if needed */
+  background: linear-gradient(to bottom, #fdfbf7 0%, #f4eee2 100%);
+  overflow: hidden;
+}
+
+.bookSectionReverse {
+  background: linear-gradient(to bottom, #f4eee2 0%, #ece1ce 100%);
+}
+
+.bookContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.bookContainerReverse {
+  /* Inherits flex-direction row */
+}
+
+.bookPhotoCol {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: flex-end; /* Push to bottom of section */
+}
+
+.keylaBookPlaceholder {
+  width: 100%;
+  max-width: 450px;
+  height: 600px;
+  background: rgba(43, 43, 43, 0.1);
+  border: 1px dashed rgba(43, 43, 43, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.keylaBookPlaceholder .placeholderText {
+  color: #1a1610;
+}
+
+.bookTextCol {
+  flex: 1;
+  padding-block: 60px 100px;
+  max-width: 500px;
+}
+
+.bookTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: 800;
+  color: #1a1610;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.bookSubtitle {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1610;
+  margin-bottom: 24px;
+}
+
+.bookList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bookList li {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: #333;
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.bookList li::before {
+  content: '•';
+  color: #1a1610;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  top: -2px;
+}
+
+.buyBookBtn {
+  display: inline-block;
+  background: #3b3126; /* Dark brown from image */
+  color: #fff;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.buyBookBtn:hover {
+  background: #1a1610;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .heroContent {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 100px;
+  }
+  .heroPhotoCol, .heroTextCol {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quoteContainer {
+    padding-inline: 20px;
+  }
+  
+  .bookContainer,
+  .bookContainerReverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  /* On mobile, text first then photo for both */
+  .bookSection .bookContainer {
+    flex-direction: column-reverse;
+  }
+  
+  .bookTextCol {
+    padding-block: 40px 0;
+  }
+  
+  .bookList li {
+    text-align: left;
+  }
+}

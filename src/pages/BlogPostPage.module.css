@@ -1,0 +1,130 @@
+.main {
+  background: #fcfcfc;
+  min-height: 100vh;
+}
+
+/* CUSTOM BLOG HEADER (Identical to BlogPage) */
+.blogHeader {
+  background: #333333; /* Dark gray */
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+  min-height: 250px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.headerContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+.bgTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(6rem, 15vw, 12rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 0.7;
+  margin: 0;
+  letter-spacing: 0.05em;
+  transform: translateY(20px);
+}
+
+/* POST SECTION */
+.postSection {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 2px, transparent 2px);
+  background-size: 30px 30px;
+  padding-block: 60px 100px;
+}
+
+.postContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.postHead {
+  text-align: center;
+  margin-bottom: 50px;
+  /* Simulating the purple box from user design, but keeping it clean */
+  padding-bottom: 30px;
+}
+
+.postTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  font-style: italic;
+  color: #1a1610;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.postSubtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  font-style: italic;
+  color: #1a1610;
+  text-transform: uppercase;
+}
+
+.postBody {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.postBody p {
+  margin-bottom: 24px;
+}
+
+.postFeaturedImage {
+  float: left;
+  max-width: 350px;
+  height: auto;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  /* Keyla's photo in the design is a cutout. Float works well. */
+}
+
+/* Clearfix for floated content */
+.postBody::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.backLinkWrapper {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.backLink {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--gold-primary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: #1a1610;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .postFeaturedImage {
+    float: none;
+    display: block;
+    margin: 0 auto 30px auto;
+    max-width: 100%;
+  }
+}

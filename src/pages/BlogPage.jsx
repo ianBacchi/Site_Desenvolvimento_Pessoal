@@ -1,48 +1,78 @@
-import PageShell  from '../components/PageShell'
+import { Link } from 'react-router-dom'
 import CTA        from '../components/CTA'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
-import ComingSoon from '../components/ComingSoon'
+import styles     from './BlogPage.module.css'
+import postImage  from '../assets/keyla-kin-cutout.png' // Placeholder post image
+import Reveal     from '../components/Reveal'
 
-/**
- * Página /blog
- * ─────────────────────────────────────────────────────────
- * Estrutura (baseado no Canva — duas variações vistas):
- *   1. PageShell banner  — "Blog / Conteúdo"
- *   2. Post em destaque  — artigo principal com imagem grande
- *   3. Grid de posts     — cards menores (foto + título + data + tag)
- *   4. Sidebar / filtros — categorias ou mais recentes (opcional)
- *   5. CTA newsletter    — "Receba conteúdo exclusivo"
- * ─────────────────────────────────────────────────────────
- */
+// Mock data simulating what the WordPress REST API will return
+const MOCK_POSTS = [
+  {
+    id: 1,
+    slug: 'alta-performance',
+    title: 'TÍTULO',
+    subtitle: 'subtítulo',
+    image: postImage
+  },
+  {
+    id: 2,
+    slug: 'mercado-imobiliario',
+    title: 'TÍTULO',
+    subtitle: 'subtítulo',
+    image: postImage
+  },
+  {
+    id: 3,
+    slug: 'dicas-de-venda',
+    title: 'TÍTULO',
+    subtitle: 'subtítulo',
+    image: postImage
+  },
+  {
+    id: 4,
+    slug: 'gestao-de-equipes',
+    title: 'TÍTULO',
+    subtitle: 'subtítulo',
+    image: postImage
+  }
+]
+
 export default function BlogPage() {
   return (
     <>
-      <PageShell
-        tag="Conteúdo & Estratégia"
-        title={<>Alta Performance <em style={{ fontStyle:'italic', color:'var(--gold-primary)' }}>para corretores</em> de mente</>}
-        subtitle="Artigos, estratégias e insights sobre o mercado imobiliário de alto padrão, gestão de equipes e posicionamento profissional."
-      >
+      <main className={styles.main}>
+        
+        {/* CUSTOM BLOG HEADER */}
+        <section className={styles.blogHeader}>
+          <div className={`container ${styles.headerContainer}`}>
+            <h1 className={styles.bgTitle}>BLOG</h1>
+          </div>
+        </section>
 
-        {/* ── SEÇÃO 1: Post em destaque ────────────── */}
-        <ComingSoon
-          section="Post em Destaque"
-          description="Card grande com imagem de capa, categoria, título, trecho do artigo, data e botão 'Ler artigo'. Layout horizontal dois colunas."
-        />
+        {/* POSTS GRID */}
+        <section className={styles.blogGridSection}>
+          <div className={`container ${styles.gridContainer}`}>
+            {MOCK_POSTS.map((post, i) => (
+              <Reveal key={post.id} delay={i * 0.1} direction="up" fullHeight={true}>
+                <div className={styles.postCard} style={{ height: '100%' }}>
+                  <div className={styles.cardPhotoCol}>
+                    <img src={post.image} alt={post.title} className={styles.cardImage} />
+                  </div>
+                  <div className={styles.cardTextCol}>
+                    <h3 className={styles.cardTitle}>{post.title}</h3>
+                    <h4 className={styles.cardSubtitle}>{post.subtitle}</h4>
+                    <Link to={`/blog/${post.slug}`} className={styles.cardBtn}>
+                      SAIBA MAIS
+                    </Link>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
 
-        {/* ── SEÇÃO 2: Grid de posts recentes ──────── */}
-        <ComingSoon
-          section="Artigos Recentes — Grid"
-          description="Grid 3 colunas de cards: foto, tag de categoria (dourada), título, data, tempo de leitura e link 'Ler mais'. Fundo escuro com hover sutil."
-        />
-
-        {/* ── SEÇÃO 3: CTA Newsletter ──────────────── */}
-        <ComingSoon
-          section="Receba Conteúdo Exclusivo — Newsletter"
-          description="Faixa com campo de e-mail + botão de inscrição. Texto: 'Receba estratégias e insights diretamente no seu e-mail.' Fundo dourado translúcido."
-        />
-
-      </PageShell>
+      </main>
 
       <CTA />
       <Footer />

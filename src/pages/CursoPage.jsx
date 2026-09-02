@@ -1,62 +1,103 @@
-import PageShell  from '../components/PageShell'
+import { Play } from 'lucide-react'
 import CTA        from '../components/CTA'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
-import ComingSoon from '../components/ComingSoon'
+import styles     from './CursoPage.module.css'
+import keylaPhoto from '../assets/keyla-kin-cutout.png' /* Placeholder */
+import cityBg     from '../assets/city-bg.png'
+import Reveal     from '../components/Reveal'
 
-/**
- * Página /curso
- * ─────────────────────────────────────────────────────────
- * Estrutura (baseado no Canva):
- *   1. PageShell banner  — título + descrição do curso
- *   2. Manchete / Hook   — frase de impacto + vídeo ou foto
- *   3. Para quem é       — perfil do aluno ideal
- *   4. O que você vai aprender — módulos / conteúdo
- *   5. Diferenciais      — por que este curso é diferente
- *   6. Depoimentos       — ex-alunos com resultados
- *   7. CTA / Inscrição   — botão principal de compra/inscrição
- * ─────────────────────────────────────────────────────────
- */
 export default function CursoPage() {
   return (
     <>
-      <PageShell
-        tag="Para corretores de alto padrão"
-        title={<>Formação Online <em style={{ fontStyle:'italic', color:'var(--gold-primary)' }}>para Corretores</em></>}
-        subtitle="Aprenda a escalar vendas no mercado imobiliário de alto padrão, construir autoridade e atender os melhores clientes com confiança e método."
-      >
+      <main className={styles.main}>
+        {/* HERO SECTION */}
+        <section className={styles.hero}>
+          <div className={styles.bgWrap}>
+            <img src={cityBg} alt="Background" className={styles.bgImage} style={{ opacity: 0.3 }} />
+            <div className={styles.bgOverlay} />
+          </div>
 
-        {/* ── SEÇÃO 1: Hook / vídeo de apresentação ── */}
-        <ComingSoon
-          section="Apresentação do Curso — Vídeo ou foto de destaque"
-          description="Bloco com vídeo incorporado ou imagem grande da Keyla. Frase de impacto acima: 'A professora que toda mentora mente, que todo corretor de sucesso precisaria ter.'"
-        />
+          <div className={`container ${styles.heroContent}`}>
+            <div className={styles.textCol}>
+              <Reveal delay={0.2} direction="up">
+                <h3 className={styles.heroLabel}>CURSO ONLINE</h3>
+              </Reveal>
+              <Reveal delay={0.4} direction="up">
+                <h1 className={styles.heroTitle}>
+                  ALTA PERFORMANCE PARA<br />
+                  CORRETORES DE IMÓVEIS
+                </h1>
+              </Reveal>
+              <Reveal delay={0.6} direction="up">
+                <div className={styles.heroDescBox}>
+                  <p>
+                    Aprenda a vender imóveis de forma prática, eficiente e organizada, mesmo começando do zero ou sem uma carteira sólida.
+                  </p>
+                </div>
+              </Reveal>
+              <Reveal delay={0.8} direction="up">
+                <a href="#comprar" className={styles.heroBtn}>
+                  COMPRE AGORA
+                </a>
+              </Reveal>
+            </div>
+            
+            <div className={styles.photoCol}>
+              <Reveal delay={0.4} direction="left">
+                <img
+                  src={keylaPhoto}
+                  alt="Keyla Kin Curso"
+                  className={styles.keylaPhoto}
+                />
+              </Reveal>
+            </div>
+          </div>
+        </section>
 
-        {/* ── SEÇÃO 2: Para quem é ─────────────────── */}
-        <ComingSoon
-          section="Para quem é este curso"
-          description="Lista com ícones: corretores iniciantes querendo se posicionar, corretores experientes querendo escalar, profissionais que querem atender alto padrão."
-        />
+        {/* SALES PITCH SECTION */}
+        <section className={styles.salesSection}>
+          <div className={`container ${styles.salesContainer}`}>
+            <Reveal delay={0.2} direction="up">
+              <h2 className={styles.salesTitle}>
+                Descubra o que realmente funciona no dia a dia do corretor e alcance o sucesso nas suas vendas.
+              </h2>
+            </Reveal>
+            
+            <Reveal delay={0.4} direction="scale">
+              <div className={styles.videoWrapper}>
+                <div className={styles.videoPlaceholder}>
+                  <button className={styles.playBtn}>
+                    <Play size={48} fill="white" />
+                  </button>
+                </div>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={0.5} direction="up">
+              <div className={styles.salesTextWrapper}>
+                <p>
+                  Com o Curso de Alta Performance para Corretores de Imóveis com Keyla Kin, aprenda o caminho completo da venda, desde o posicionamento até a negociação.
+                </p>
+                <p>
+                  Aprenda de forma simples, prática, sem teoria excessiva e sem enrolação, como destravar as vendas e se tornar um profissional mais organizado e confiante no processo comercial.
+                </p>
+                <p>
+                  Adquira o curso agora e alcance o sucesso nas suas vendas de imóveis.
+                </p>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={0.6} direction="up">
+              <a href="#comprar" className={styles.salesBtn}>
+                <span>QUERO O</span>
+                <span>CURSO</span>
+              </a>
+            </Reveal>
+          </div>
+        </section>
 
-        {/* ── SEÇÃO 3: Módulos / Grade do curso ────── */}
-        <ComingSoon
-          section="O que você vai aprender — Módulos"
-          description="Lista numerada de módulos com título, descrição curta e número de aulas. Visual escuro com destaque dourado em cada número."
-        />
-
-        {/* ── SEÇÃO 4: Diferenciais ────────────────── */}
-        <ComingSoon
-          section="Por que este curso é diferente"
-          description="3 a 5 diferenciais em cards: Conteúdo prático, Método testado, Comunidade exclusiva, Suporte, Atualizações inclusas."
-        />
-
-        {/* ── SEÇÃO 5: Depoimentos de ex-alunos ────── */}
-        <ComingSoon
-          section="O que dizem os alunos"
-          description="Cards de depoimentos com foto, nome, resultado específico e estrelas. Foco em transformações reais e números."
-        />
-
-      </PageShell>
+      </main>
 
       <CTA />
       <Footer />

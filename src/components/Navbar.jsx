@@ -27,43 +27,70 @@ export default function Navbar() {
   // Fecha drawer ao mudar de rota
   useEffect(() => { setOpen(false) }, [location])
 
+  // Fecha drawer ao scrollar no mobile
+  useEffect(() => {
+    if (!open) return
+    const onScroll = () => setOpen(false)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [open])
+
+  // Bloqueia scroll do body quando drawer está aberto
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [open])
+
   const close = () => setOpen(false)
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={`container ${styles.inner}`}>
+    <>
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+        <div className={`container ${styles.inner}`}>
 
-        {/* LOGO → home */}
-        <Link to="/" className={styles.logo}>
-          <img src={logoImg} alt="Keyla Kin Logo" style={{ height: '90px', width: 'auto' }} />
-        </Link>
+          {/* LOGO → home */}
+          <Link to="/" className={styles.logo}>
+            <img src={logoImg} alt="Keyla Kin Logo" style={{ height: '90px', width: 'auto' }} />
+          </Link>
 
-        {/* DESKTOP NAV */}
-        <nav className={styles.nav} aria-label="Navegação principal">
-          {navLinks.map(l => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className={`${styles.navLink} ${location.pathname === l.to ? styles.navLinkActive : ''}`}
-            >
-              {l.label}
-            </Link>
-          ))}
-        </nav>
+          {/* DESKTOP NAV */}
+          <nav className={styles.nav} aria-label="Navegação principal">
+            {navLinks.map(l => (
+              <Link
+                key={l.to}
+                to={l.to}
+                className={`${styles.navLink} ${location.pathname === l.to ? styles.navLinkActive : ''}`}
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
 
-        {/* MOBILE HAMBURGER */}
-        <button
-          className={styles.burger}
-          onClick={() => setOpen(o => !o)}
-          aria-label={open ? 'Fechar menu' : 'Abrir menu'}
-          aria-expanded={open}
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </div>
+          {/* MOBILE HAMBURGER */}
+          <button
+            className={styles.burger}
+            onClick={() => setOpen(o => !o)}
+            aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={open}
+          >
+            <Menu size={22} />
+          </button>
+        </div>
+      </header>
 
-      {/* MOBILE DRAWER */}
+      {/* MOBILE DRAWER — fora do header para não quebrar com backdrop-filter */}
       <div className={`${styles.drawer} ${open ? styles.drawerOpen : ''}`}>
+        <button
+          className={styles.drawerClose}
+          onClick={close}
+          aria-label="Fechar menu"
+        >
+          <X size={28} />
+        </button>
         <nav className={styles.drawerNav}>
           {navLinks.map(l => (
             <Link
@@ -87,6 +114,6 @@ export default function Navbar() {
           </a>
         </nav>
       </div>
-    </header>
+    </>
   )
 }

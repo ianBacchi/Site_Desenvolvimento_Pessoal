@@ -1,0 +1,134 @@
+.main {
+  background: #dbdad8; /* Light gray background from the mockup */
+  min-height: 100vh;
+}
+
+.mediaHero {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 100px; /* To account for navbar */
+  overflow: hidden;
+  position: relative;
+}
+
+.keylaCol {
+  flex: 0 0 45%;
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* Keyla grounded at the bottom */
+  justify-content: flex-start;
+  z-index: 2;
+}
+
+.keylaPhoto {
+  height: 90vh; /* Make her huge */
+  width: auto;
+  object-fit: contain;
+  object-position: bottom left;
+  /* Push her slightly left so she gets cropped by screen edge like in mockup */
+  transform: translateX(-10%);
+}
+
+.galleryCol {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  z-index: 1;
+}
+
+.collageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Stagger every even item downwards to create the scattered look */
+.collageItem:nth-child(even) {
+  transform: translateY(80px);
+}
+
+/* Add some random sizes/aspect ratios to mimic the mockup */
+.collageItem:nth-child(1) .placeholderBox {
+  aspect-ratio: 3 / 4;
+}
+.collageItem:nth-child(2) .placeholderBox {
+  aspect-ratio: 4 / 3;
+}
+.collageItem:nth-child(3) .placeholderBox {
+  aspect-ratio: 16 / 9;
+}
+.collageItem:nth-child(4) .placeholderBox {
+  aspect-ratio: 3 / 4;
+}
+
+.placeholderBox {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px dashed rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.placeholderBox:hover {
+  transform: scale(1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .mediaHero {
+    flex-direction: column;
+    padding-top: 120px;
+  }
+
+  .keylaCol {
+    flex: none;
+    height: 50vh;
+    justify-content: center;
+    margin-bottom: -50px; /* Overlap slightly with gallery */
+  }
+
+  .keylaPhoto {
+    height: 100%;
+    transform: translateX(0);
+  }
+
+  .galleryCol {
+    padding: 20px;
+    background: #fdfbf7; /* Give the gallery a different background on mobile for separation */
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+  }
+
+  .collageGrid {
+    gap: 20px;
+    padding-bottom: 80px;
+  }
+
+  .collageItem:nth-child(even) {
+    transform: translateY(40px); /* Less stagger on mobile */
+  }
+}
+
+@media (max-width: 500px) {
+  .collageGrid {
+    grid-template-columns: 1fr;
+  }
+  .collageItem:nth-child(even) {
+    transform: translateY(0); /* Remove stagger completely on very small screens */
+  }
+}

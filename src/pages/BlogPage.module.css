@@ -1,0 +1,147 @@
+.main {
+  background: var(--bg-primary); /* Uses standard dark background from other pages, or adjust if needed */
+  min-height: 100vh;
+}
+
+/* CUSTOM BLOG HEADER */
+.blogHeader {
+  background: #333333; /* Dark gray */
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+  min-height: 250px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.headerContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+.bgTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(6rem, 15vw, 12rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 0.7;
+  margin: 0;
+  letter-spacing: 0.05em;
+  /* Shift slightly down to get clipped by the bottom edge like the mockup */
+  transform: translateY(20px);
+}
+
+/* POSTS GRID */
+.blogGridSection {
+  background-color: #fcfcfc;
+  padding-block: 80px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.postCard {
+  background: #d4b170; /* Gold */
+  border-radius: 20px;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+  height: 380px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.postCard:hover {
+  transform: translateY(-5px);
+}
+
+.cardPhotoCol {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: flex-end; /* Keep image grounded */
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cardImage {
+  width: auto;
+  max-height: 110%; /* Slightly taller to overlap out if we wanted, but let's keep it clean */
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+.cardTextCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 30px 40px 10px;
+  z-index: 2;
+}
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-style: italic;
+  color: #1a1610;
+  margin-bottom: 8px;
+}
+
+.cardSubtitle {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #1a1610;
+  margin-bottom: auto; /* Push button to bottom */
+}
+
+.cardBtn {
+  display: inline-block;
+  align-self: flex-start;
+  background: #4a3e2e; /* Dark brown */
+  color: #fff;
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-top: 40px;
+}
+
+.cardBtn:hover {
+  background: #1a1610;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-inline: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .postCard {
+    height: 300px;
+  }
+  .cardTitle {
+    font-size: 1.4rem;
+  }
+  .cardSubtitle {
+    font-size: 1rem;
+  }
+}
