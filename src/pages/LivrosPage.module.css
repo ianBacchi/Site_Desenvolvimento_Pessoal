@@ -1,21 +1,23 @@
 .main {
-  background: #fdfbf7; /* Light cream background for the lower half */
+  background: var(--bg-primary);
   min-height: 100vh;
 }
 
 /* HERO SECTION */
 .hero {
   position: relative;
-  background: #2a2a2a;
+  background: radial-gradient(circle at center, #2e2617 0%, var(--bg-primary) 70%);
   min-height: 60vh;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid rgba(212, 177, 112, 0.2);
 }
 
 .bgOverlay {
   position: absolute;
   inset: 0;
-  background-color: #2b2b2b;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDMiLz4KPC9zdmc+');
+  background-repeat: repeat;
   z-index: 1;
 }
 
@@ -36,25 +38,14 @@
   justify-content: flex-end;
 }
 
-.booksPlaceholder {
+.heroBooksImg {
   width: 100%;
-  max-width: 400px;
-  aspect-ratio: 4 / 3;
-  background: rgba(212, 177, 112, 0.2);
-  border: 1px solid rgba(212, 177, 112, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.placeholderText {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  color: var(--gold-primary);
-  opacity: 0.8;
+  max-width: 700px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  /* Adds a slight glow effect behind the books to make them pop against the dark bg */
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
 }
 
 .heroTextCol {
@@ -68,21 +59,22 @@
 .heroText {
   font-family: var(--font-sans);
   font-size: 1.1rem;
-  color: var(--text-white);
+  color: var(--text-off);
   line-height: 1.6;
   margin-bottom: 24px;
 }
 
 .heroText strong {
   font-weight: 800;
+  color: var(--text-white);
 }
 
 .heroBtn {
   margin-top: 16px;
   display: inline-block;
   background: var(--gold-primary);
-  color: #fff;
-  padding: 12px 32px;
+  color: #000;
+  padding: 14px 36px;
   font-family: var(--font-sans);
   font-weight: 800;
   font-size: 1.1rem;
@@ -90,11 +82,13 @@
   text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(212, 177, 112, 0.3);
 }
 
 .heroBtn:hover {
   background: var(--gold-light);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 177, 112, 0.5);
 }
 
 /* QUOTE SECTION */
@@ -116,10 +110,11 @@
   font-family: var(--font-serif);
   font-size: 5rem;
   font-weight: 800;
-  color: #2b2b2b;
+  color: #1a1610;
   line-height: 0;
   position: relative;
   top: 15px;
+  opacity: 0.5;
 }
 
 .quoteText {
@@ -133,13 +128,14 @@
 
 /* BOOK SECTIONS */
 .bookSection {
-  padding-block: 80px 0; /* padding bottom 0 so the image can sit on the bottom edge if needed */
-  background: linear-gradient(to bottom, #fdfbf7 0%, #f4eee2 100%);
+  padding-block: 80px; 
+  background: transparent;
+  border-bottom: 1px solid rgba(212, 177, 112, 0.1);
   overflow: hidden;
 }
 
 .bookSectionReverse {
-  background: linear-gradient(to bottom, #f4eee2 0%, #ece1ce 100%);
+  background: rgba(26, 22, 16, 0.4);
 }
 
 .bookContainer {
@@ -157,72 +153,63 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  align-self: flex-end; /* Push to bottom of section */
+  align-items: center;
 }
 
-.keylaBookPlaceholder {
+.keylaBookImg {
   width: 100%;
   max-width: 450px;
-  height: 600px;
-  background: rgba(43, 43, 43, 0.1);
-  border: 1px dashed rgba(43, 43, 43, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.keylaBookPlaceholder .placeholderText {
-  color: #1a1610;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  display: block;
 }
 
 .bookTextCol {
   flex: 1;
-  padding-block: 60px 100px;
+  padding-block: 20px;
   max-width: 500px;
 }
 
 .bookTitle {
-  font-family: var(--font-sans);
-  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 800;
-  color: #1a1610;
+  color: var(--gold-primary);
   line-height: 1.2;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .bookSubtitle {
   font-family: var(--font-sans);
   font-size: 1.2rem;
-  font-weight: 700;
-  color: #1a1610;
-  margin-bottom: 24px;
+  font-weight: 500;
+  color: var(--text-white);
+  margin-bottom: 32px;
 }
 
 .bookList {
   list-style: none;
   padding: 0;
-  margin: 0 0 32px 0;
+  margin: 0 0 40px 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 .bookList li {
   font-family: var(--font-sans);
-  font-size: 1rem;
-  color: #333;
+  font-size: 1.05rem;
+  color: var(--text-off);
   position: relative;
   padding-left: 20px;
-  line-height: 1.4;
-  font-weight: 500;
+  line-height: 1.5;
 }
 
 .bookList li::before {
   content: '•';
-  color: #1a1610;
+  color: var(--gold-primary);
   position: absolute;
   left: 0;
   font-size: 1.5rem;
@@ -232,9 +219,9 @@
 
 .buyBookBtn {
   display: inline-block;
-  background: #3b3126; /* Dark brown from image */
-  color: #fff;
-  padding: 12px 24px;
+  background: var(--gold-primary);
+  color: #000;
+  padding: 14px 32px;
   font-family: var(--font-sans);
   font-weight: 800;
   font-size: 1.1rem;
@@ -242,11 +229,13 @@
   text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(212, 177, 112, 0.3);
 }
 
 .buyBookBtn:hover {
-  background: #1a1610;
+  background: var(--gold-light);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 177, 112, 0.5);
 }
 
 /* RESPONSIVE */

@@ -3,7 +3,7 @@ import CTA        from '../components/CTA'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './CursoPage.module.css'
-import keylaPhoto from '../assets/keyla-kin-cutout.png' /* Placeholder */
+import keylaPhoto from '../assets/keyla-curso-hero.png'
 import bgCurso    from '../assets/bg-curso.png'
 import Reveal     from '../components/Reveal'
 
@@ -90,8 +90,7 @@ export default function CursoPage() {
             
             <Reveal delay={0.6} direction="up">
               <a href="#comprar" className={styles.salesBtn}>
-                <span>QUERO O</span>
-                <span>CURSO</span>
+                QUERO O CURSO
               </a>
             </Reveal>
           </div>

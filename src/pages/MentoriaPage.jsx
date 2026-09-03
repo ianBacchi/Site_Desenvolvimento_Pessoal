@@ -41,6 +41,11 @@ export default function MentoriaPage() {
                   imóveis e alcance o sucesso nas suas vendas.
                 </p>
               </Reveal>
+              <Reveal delay={0.8} direction="up">
+                <a href="#aplicar" className={styles.heroBtn}>
+                  QUERO APLICAR
+                </a>
+              </Reveal>
             </div>
             
             <div className={styles.photoCol}>

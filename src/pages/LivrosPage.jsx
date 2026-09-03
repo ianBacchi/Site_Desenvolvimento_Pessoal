@@ -3,6 +3,9 @@ import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './LivrosPage.module.css'
 import Reveal     from '../components/Reveal'
+import livrosHero from '../assets/livros-hero.png'
+import keylaLivro1 from '../assets/keyla-livro1.png'
+import keylaLivro2 from '../assets/keyla-livro2.jpg'
 
 export default function LivrosPage() {
   return (
@@ -15,10 +18,11 @@ export default function LivrosPage() {
           <div className={`container ${styles.heroContent}`}>
             <div className={styles.heroPhotoCol}>
               <Reveal delay={0.2} direction="scale">
-                {/* Placeholder for the two books mockup */}
-                <div className={styles.booksPlaceholder}>
-                  <span className={styles.placeholderText}>FOTO DOS 2 LIVROS AQUI</span>
-                </div>
+                <img 
+                  src={livrosHero} 
+                  alt="Livros Keyla Kin" 
+                  className={styles.heroBooksImg} 
+                />
               </Reveal>
             </div>
             
@@ -60,10 +64,11 @@ export default function LivrosPage() {
           <div className={`container ${styles.bookContainer}`}>
             <div className={styles.bookPhotoCol}>
               <Reveal delay={0.2} direction="right" fullHeight={true}>
-                {/* Placeholder for Keyla holding Book 1 */}
-                <div className={styles.keylaBookPlaceholder}>
-                  <span className={styles.placeholderText}>FOTO DA KEYLA SEGURANDO LIVRO 1</span>
-                </div>
+                <img 
+                  src={keylaLivro1} 
+                  alt="Keyla segurando o livro Gestão para Imobiliária" 
+                  className={styles.keylaBookImg} 
+                />
               </Reveal>
             </div>
             
@@ -113,10 +118,11 @@ export default function LivrosPage() {
 
             <div className={styles.bookPhotoCol}>
               <Reveal delay={0.4} direction="left" fullHeight={true}>
-                {/* Placeholder for Keyla holding Book 2 */}
-                <div className={styles.keylaBookPlaceholder}>
-                  <span className={styles.placeholderText}>FOTO DA KEYLA SEGURANDO LIVRO 2</span>
-                </div>
+                <img 
+                  src={keylaLivro2} 
+                  alt="Keyla com microfone segurando o livro Experiências de Mulheres 2" 
+                  className={styles.keylaBookImg} 
+                />
               </Reveal>
             </div>
           </div>
