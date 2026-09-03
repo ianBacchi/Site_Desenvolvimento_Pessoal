@@ -4,7 +4,7 @@ import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './CursoPage.module.css'
 import keylaPhoto from '../assets/keyla-kin-cutout.png' /* Placeholder */
-import cityBg     from '../assets/city-bg.png'
+import bgCurso    from '../assets/bg-curso.png'
 import Reveal     from '../components/Reveal'
 
 export default function CursoPage() {
@@ -14,7 +14,7 @@ export default function CursoPage() {
         {/* HERO SECTION */}
         <section className={styles.hero}>
           <div className={styles.bgWrap}>
-            <img src={cityBg} alt="Background" className={styles.bgImage} style={{ opacity: 0.3 }} />
+            <img src={bgCurso} alt="Background" className={styles.bgImage} />
             <div className={styles.bgOverlay} />
           </div>
 

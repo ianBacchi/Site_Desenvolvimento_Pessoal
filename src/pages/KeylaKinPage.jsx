@@ -2,9 +2,11 @@ import CTA        from '../components/CTA'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './KeylaKinPage.module.css'
-import cityBg     from '../assets/city-bg.png'
+import cityBg     from '../assets/city-bg-keyla.png'
 import keylaPhoto from '../assets/keyla-kin-cutout.png'
 import keylaPurpose from '../assets/keyla-purpose.png'
+import equipeLideranca from '../assets/equipe-lideranca.jpg'
+import keylaMentoria from '../assets/keyla-mentoria.jpg'
 import logoImg    from '../assets/logo.png'
 
 import Reveal from '../components/Reveal'
@@ -110,7 +112,7 @@ export default function KeylaKinPage() {
 
           <div className={`container ${styles.purposeContent}`}>
             <div className={styles.purposePhotoCol}>
-              <Reveal delay={0.2} direction="right">
+              <Reveal delay={0.2} direction="right" fullHeight={true}>
                 <img
                   src={keylaPurpose}
                   alt="Keyla Kin"
@@ -162,23 +164,21 @@ export default function KeylaKinPage() {
                 </div>
               </Reveal>
             </div>
-            <div className={styles.leadershipPhotoCol}>
-              <Reveal delay={0.4} direction="left" fullHeight={true}>
-                <div className={styles.teamPhotoPlaceholder}>
-                  <span className={styles.placeholderText}>Foto da Equipe</span>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </section>
+    <div className={styles.leadershipPhotoCol}>
+      <Reveal delay={0.4} direction="left" fullHeight={true}>
+        <img src={equipeLideranca} alt="Equipe de Corretores" className={styles.leadershipPhoto} />
+      </Reveal>
+    </div>
+  </div>
+</section>
 
         {/* MENTORSHIP SECTION */}
         <section className={styles.mentorshipSection}>
           <div className={`container ${styles.mentorshipContainer}`}>
             <div className={styles.mentorshipPhotoCol}>
-              <div className={styles.teamPhotoPlaceholder}>
-                <span className={styles.placeholderText}>Foto da Mentoria</span>
-              </div>
+              <Reveal delay={0.2} direction="right" fullHeight={true}>
+                <img src={keylaMentoria} alt="Keyla Palestrando" className={styles.mentorshipPhoto} />
+              </Reveal>
             </div>
             
             <div className={styles.mentorshipTextCol}>

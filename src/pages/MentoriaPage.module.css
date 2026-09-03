@@ -19,12 +19,20 @@
   z-index: 1;
 }
 
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 .bgOverlay {
   position: absolute;
   inset: 0;
-  /* Dark textured background representation */
+  /* Dark textured background representation - reduced opacity to make image pop */
   background: 
-    linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(30,30,30,0.9) 100%),
+    linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(30,30,30,0.5) 100%),
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+');
   background-repeat: repeat;
 }
@@ -338,6 +346,107 @@
   height: 6px;
   border-radius: 50%;
   background: var(--gold-primary);
+}
+
+/* CUSTOM MONTH CARDS (Mês 2, 3, 4) */
+.monthCustomCard {
+  background: rgba(26, 22, 16, 0.4);
+  border: 1px solid rgba(212, 177, 112, 0.2);
+  border-radius: 12px;
+  padding: 40px;
+  backdrop-filter: blur(8px);
+}
+
+.monthHeaderRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.monthMainTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 700;
+  color: var(--text-white);
+  text-transform: uppercase;
+  margin: 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.monthSubtitleBadge {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.monthSectionTitle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  margin: 0 0 24px 0;
+}
+
+.monthColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.monthList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.monthList li {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-white);
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.monthList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-white);
+}
+
+.monthList.checkList li::before {
+  content: '✓';
+  background: transparent;
+  color: var(--text-white);
+  font-weight: 800;
+  font-size: 1.1rem;
+  left: -4px;
+  top: 2px;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+}
+
+@media (max-width: 768px) {
+  .monthColumns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 .timelineAction {

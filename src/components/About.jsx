@@ -1,4 +1,5 @@
 import styles from './About.module.css'
+import equipeImg from '../assets/equipe.jpg'
 
 import Reveal from './Reveal'
 
@@ -22,8 +23,8 @@ export default function About() {
         <div className={styles.photoSide}>
           <Reveal delay={0.2} direction="scale">
             <img
-              src="https://placehold.co/600x400/2a2117/d4b170?text=Foto+Equipe/Alunos"
-              alt="Missão Keyla Kin"
+              src={equipeImg}
+              alt="Equipe Kin Imóveis"
               className={styles.photo}
             />
           </Reveal>

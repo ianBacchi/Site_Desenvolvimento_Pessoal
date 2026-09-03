@@ -4,9 +4,9 @@ import CTA        from '../components/CTA'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './MentoriaPage.module.css'
-import keylaPhoto from '../assets/keyla-kin-cutout.png' /* Placeholder */
+import keylaPhoto from '../assets/keyla-mentoria-hero.png'
 import logoImg    from '../assets/logo.png'
-import cityBg     from '../assets/city-bg.png'
+import bgMentoria from '../assets/bg-mentoria.png'
 
 import Reveal from '../components/Reveal'
 
@@ -20,7 +20,7 @@ export default function MentoriaPage() {
         {/* HERO SECTION */}
         <section className={styles.hero}>
           <div className={styles.bgWrap}>
-            <img src={cityBg} alt="Background" className={styles.bgImage} />
+            <img src={bgMentoria} alt="Background" className={styles.bgImage} />
             <div className={styles.bgOverlay} />
           </div>
 
@@ -180,19 +180,149 @@ export default function MentoriaPage() {
                 
                 {selectedMonth === 2 && (
                   <div className={styles.weeksGrid}>
-                    <p style={{ color: 'var(--text-white)', gridColumn: '1 / -1' }}>Conteúdo do Mês 2 será inserido aqui...</p>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 1</span>
+                        <h4 className={styles.weekCardTitle}>IDENTIFICAÇÃO DE GARGALOS</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Análise semanal</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Como identificar gargalos na operação</li>
+                        <li>Acompanhamento semanal dos indicadores</li>
+                      </ul>
+                    </div>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 2</span>
+                        <h4 className={styles.weekCardTitle}>PLANEJAMENTO DE SOLUÇÕES</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Ajustes práticos</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Como planejar soluções possíveis</li>
+                        <li>Ajustes práticos nos processos da equipe</li>
+                      </ul>
+                    </div>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 3</span>
+                        <h4 className={styles.weekCardTitle}>AJUSTES E CORREÇÕES</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Implementação estratégica</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Como ajustar processos sem travar a operação</li>
+                        <li>Aplicação das correções orientadas</li>
+                      </ul>
+                    </div>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 4</span>
+                        <h4 className={styles.weekCardTitle}>MATURIDADE DE GESTÃO</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Consolidação</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Revisão dos ajustes do mês</li>
+                        <li>Análise de impacto nos números</li>
+                      </ul>
+                    </div>
                   </div>
                 )}
                 
                 {selectedMonth === 3 && (
                   <div className={styles.weeksGrid}>
-                    <p style={{ color: 'var(--text-white)', gridColumn: '1 / -1' }}>Conteúdo do Mês 3 será inserido aqui...</p>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 1</span>
+                        <h4 className={styles.weekCardTitle}>CONTROLE E NÚMEROS</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Escala, Nicho e Consistência</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Revisão de mudanças já aplicadas</li>
+                        <li>Processos mais organizados</li>
+                        <li>Indicadores mais claros</li>
+                      </ul>
+                    </div>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 2</span>
+                        <h4 className={styles.weekCardTitle}>NICHO E POSICIONAMENTO</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Foco e assertividade</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Definir região e nicho de atuação</li>
+                        <li>Trabalhar faixa de ticket ideal</li>
+                      </ul>
+                    </div>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 3</span>
+                        <h4 className={styles.weekCardTitle}>MANUTENÇÃO DA GESTÃO</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Criando hábitos</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Ensinar como manter a consistência</li>
+                        <li>Táticas para evitar regressão da gestão</li>
+                      </ul>
+                    </div>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 4</span>
+                        <h4 className={styles.weekCardTitle}>ESCALA E PRODUÇÃO</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Crescimento direcionado</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Aumentar produção com mais assertividade</li>
+                        <li>Preparação para o próximo ciclo</li>
+                      </ul>
+                    </div>
                   </div>
                 )}
                 
                 {selectedMonth === 4 && (
                   <div className={styles.weeksGrid}>
-                    <p style={{ color: 'var(--text-white)', gridColumn: '1 / -1' }}>Conteúdo do Mês 4 será inserido aqui...</p>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 1</span>
+                        <h4 className={styles.weekCardTitle}>DIAGNÓSTICO AVANÇADO</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Acompanhamento contínuo</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Acompanhamento semanal dos indicadores</li>
+                        <li>Como identificar gargalos remanescentes</li>
+                      </ul>
+                    </div>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 2</span>
+                        <h4 className={styles.weekCardTitle}>SOLUÇÕES ESTRATÉGICAS</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Alto nível de gestão</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Como planejar soluções possíveis</li>
+                        <li>Ajustes práticos nos processos</li>
+                      </ul>
+                    </div>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 3</span>
+                        <h4 className={styles.weekCardTitle}>OTIMIZAÇÃO OPERACIONAL</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Correções em movimento</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Como ajustar processos sem travar a operação</li>
+                        <li>Aplicação das correções orientadas</li>
+                      </ul>
+                    </div>
+                    <div className={styles.weekCard}>
+                      <div className={styles.weekCardHeader}>
+                        <span className={styles.weekBadge}>SEMANA 4</span>
+                        <h4 className={styles.weekCardTitle}>FOCO NA CONVERSÃO</h4>
+                      </div>
+                      <p className={styles.weekCardDesc}>Do Lead ao Contrato</p>
+                      <ul className={styles.weekCardList}>
+                        <li>Acompanhamento próximo da chegada do lead ao contrato</li>
+                        <li>Avaliação final de resultados da mentoria</li>
+                      </ul>
+                    </div>
                   </div>
                 )}
               </div>

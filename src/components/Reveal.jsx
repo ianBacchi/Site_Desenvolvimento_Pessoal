@@ -36,7 +36,7 @@ export default function Reveal({ children, width = "100%", delay = 0, direction 
   }
 
   return (
-    <div ref={ref} style={{ position: "relative", width, height: fullHeight ? "100%" : "auto", overflow: "hidden" }}>
+    <div ref={ref} style={{ position: "relative", width, height: fullHeight ? "100%" : "auto", overflow: isInView ? "visible" : "hidden" }}>
       <motion.div
         variants={variants}
         initial="hidden"
