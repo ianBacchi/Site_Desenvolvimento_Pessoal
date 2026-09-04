@@ -5,24 +5,31 @@ import strip2 from '../assets/home-strip-5.jpg'
 import strip3 from '../assets/home-strip-3.jpg'
 import strip4 from '../assets/home-strip-4.jpg'
 
+import imgCarlos from '../assets/carlos_mendonca.jpg'
+import imgFernanda from '../assets/fernanda_lima.jpg'
+import imgAndre from '../assets/andre_souza.jpg'
+
 const testimonials = [
   {
     name: 'Carlos Mendonça',
     role: 'Diretor de Imobiliária, SP',
     text: 'A mentoria da Keyla transformou completamente a forma como gerencio minha equipe. Em 6 meses aumentamos o faturamento em 60% e reduzimos a rotatividade de corretores.',
     stars: 5,
+    img: imgCarlos
   },
   {
     name: 'Fernanda Lima',
     role: 'Corretora Premium, RJ',
     text: 'O curso me deu ferramentas práticas e uma visão de mercado que eu nunca teria sozinha. Hoje atendo clientes de alto padrão com confiança e autoridade.',
     stars: 5,
+    img: imgFernanda
   },
   {
     name: 'André Souza',
     role: 'Gestor Comercial, MG',
     text: 'A palestra da Keyla foi o ponto de virada para minha equipe. O conteúdo é profundo, direto e aplicável no dia seguinte. Resultados visíveis em semanas.',
     stars: 5,
+    img: imgAndre
   },
 ]
 
@@ -49,7 +56,7 @@ export default function Testimonials() {
               </div>
               <div className={styles.author}>
                 <div className={styles.avatar}>
-                  {t.name.charAt(0)}
+                  <img src={t.img} alt={t.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
                 </div>
                 <div>
                   <div className={styles.name}>{t.name}</div>

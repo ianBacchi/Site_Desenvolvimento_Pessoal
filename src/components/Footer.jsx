@@ -31,7 +31,7 @@ const socials = [
         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
       </svg>
     ),
-    href: 'https://instagram.com',
+    href: 'https://www.instagram.com/keyla_kin/',
     label: 'Instagram',
   },
   {
@@ -41,7 +41,7 @@ const socials = [
         <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
       </svg>
     ),
-    href: 'https://youtube.com',
+    href: 'https://www.youtube.com/@Keyla_Kin',
     label: 'YouTube',
   },
   {
@@ -52,7 +52,7 @@ const socials = [
         <circle cx="4" cy="4" r="2"/>
       </svg>
     ),
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/in/keyla-kin-a54997ba/',
     label: 'LinkedIn',
   },
   {

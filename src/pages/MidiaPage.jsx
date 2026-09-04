@@ -1,7 +1,7 @@
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './MidiaPage.module.css'
-import keylaMidia from '../assets/keyla-kin-cutout.png' // Use placeholder for Keyla
+import keylaMidia from '../assets/keyla-midia-cutout.png'
 import Reveal     from '../components/Reveal'
 
 // We reuse the images that represent her international/event experience

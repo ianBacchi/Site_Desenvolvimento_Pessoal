@@ -262,6 +262,7 @@
   font-weight: 700;
   color: #1a1610;
   line-height: 1.2;
+  margin-top: 0;
   margin-bottom: 20px;
 }
 
@@ -358,7 +359,8 @@
 
 .mentorshipTextCol {
   flex: 1;
-  padding-block: 80px;
+  padding-top: 0;
+  padding-bottom: 80px;
   text-align: left; /* Aligned left according to image */
 }
 
