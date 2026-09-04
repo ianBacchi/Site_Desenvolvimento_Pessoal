@@ -1,4 +1,3 @@
-import CTA        from '../components/CTA'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './LivrosPage.module.css'
@@ -37,14 +36,9 @@ export default function LivrosPage() {
                   Cada livro reúne <strong>metodologias práticas, estratégias de aceleração e experiências reais</strong> para impulsionar seus resultados e transformar sua atuação nos negócios.
                 </p>
               </Reveal>
-              <Reveal delay={0.8} direction="up">
-                <a href="#comprar-geral" className={styles.heroBtn}>
-                  COMPRE AGORA
-                </a>
-              </Reveal>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* QUOTE SECTION */}
         <section className={styles.quoteSection}>
@@ -86,7 +80,12 @@ export default function LivrosPage() {
                   <li>Técnicas para fidelizar clientes e ampliar a lucratividade.</li>
                 </ul>
                 
-                <a href="#livro1" className={styles.buyBookBtn}>
+                <a 
+                  href="https://pay.hotmart.com/O101742512F?sck=HOTMART_PRODUCT_PAGE&off=0aybcre9&hotfeature=32,34&_gl=1*6uks1q*_gcl_aw*R0NMLjE3ODY5OTcxNTguQ2owS0NRanc0b3JVQmhDakFSSXNBSWJGM3F4UDNPaExNS2U2aktCUlJyZmlWVE5mUmhacWJRRlRwNl9IWk11NVBOLThPaHJ4VU9aRzFhY2FBb3BVRUFMd193Y0I.*_gcl_au*MjE0Mzg4MjIzNy4xNzg2OTczMzE2*FPAU*MjE0Mzg4MjIzNy4xNzg2OTczMzE2*_ga*MTU1OTg1NjEzMS4xNzc5MTE3MjYy*_ga_GQH2V1F11Q*czE3ODg0NjAzNDEkbzUwJGcxJHQxNzg4NDYwNDEwJGo2MCRsMSRoMTMwNTIwMjk0NQ..&bid=1788460421307" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.buyBookBtn}
+                >
                   QUERO ESSE LIVRO
                 </a>
               </Reveal>
@@ -110,7 +109,12 @@ export default function LivrosPage() {
                   <li>Técnicas para fidelizar clientes e ampliar a lucratividade.</li>
                 </ul>
                 
-                <a href="#livro2" className={styles.buyBookBtn}>
+                <a 
+                  href="https://api.whatsapp.com/send?phone=5511984591195&text=Oi%20Keyla%2C%20quero%20saber%20mais%20sobre%20como%20comprar%20o%20livro%20Experi%C3%AAncias%20de%20Mulheres%20no%20Mercado%20Imobili%C3%A1rio%202!" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.buyBookBtn}
+                >
                   QUERO ESSE LIVRO
                 </a>
               </Reveal>
@@ -129,8 +133,6 @@ export default function LivrosPage() {
         </section>
 
       </main>
-
-      <CTA />
       <Footer />
       <WhatsApp />
     </>

@@ -1,5 +1,4 @@
 import { useParams, Link } from 'react-router-dom'
-import CTA        from '../components/CTA'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './BlogPostPage.module.css'
@@ -28,10 +27,10 @@ export default function BlogPostPage() {
             
             <header className={styles.postHead}>
               <h1 className={styles.postTitle}>
-                ALTA PERFORMANCE PARA CORRETORES DE IMÓVEIS
+                TÍTULO DO ARTIGO
               </h1>
               <h2 className={styles.postSubtitle}>
-                SUBTÍTULO
+                Subtítulo do artigo ou breve resumo para introduzir o tema
               </h2>
             </header>
 
@@ -43,31 +42,13 @@ export default function BlogPostPage() {
               />
               
               <p>
-                Com o Curso de Alta Performance para Corretores de Imóveis com Keyla Kin, aprenda o caminho completo da venda, desde o posicionamento até a negociação.
+                Este é o corpo do artigo onde o conteúdo escrito no WordPress será exibido. A imagem ao lado é a <strong>Imagem Destacada (Featured Image)</strong> que a sua cliente cadastrar lá no painel.
               </p>
               <p>
-                Aprenda de forma simples, prática, sem teoria excessiva e sem enrolação, como destravar as vendas e se tornar um profissional mais organizado e confiante no processo comercial.
+                Quando a integração for feita, todo esse texto será substituído pelo conteúdo real do post. O layout já está preparado para receber os parágrafos, negritos, links e imagens adicionais que forem inseridos no editor do site.
               </p>
               <p>
-                Adquira o curso agora e alcance o sucesso nas suas vendas de imóveis.
-              </p>
-              <p>
-                Com o Curso de Alta Performance para Corretores de Imóveis com Keyla Kin, aprenda o caminho completo da venda, desde o posicionamento até a negociação.
-              </p>
-              <p>
-                Aprenda de forma simples, prática, sem teoria excessiva e sem enrolação, como destravar as vendas e se tornar um profissional mais organizado e confiante no processo comercial.
-              </p>
-              <p>
-                Adquira o curso agora e alcance o sucesso nas suas vendas de imóveis.
-              </p>
-              <p>
-                Com o Curso de Alta Performance para Corretores de Imóveis com Keyla Kin, aprenda o caminho completo da venda, desde o posicionamento até a negociação.
-              </p>
-              <p>
-                Aprenda de forma simples, prática, sem teoria excessiva e sem enrolação, como destravar as vendas e se tornar um profissional mais organizado e confiante no processo comercial.
-              </p>
-              <p>
-                Adquira o curso agora e alcance o sucesso nas suas vendas de imóveis.
+                A estruturação do título e do subtítulo logo acima também está mapeada para puxar as informações certas (Título e Resumo/Excerpt) para que a experiência de leitura fique perfeita e alinhada ao design do site.
               </p>
               
               {/* This content will eventually come from WP as dangerouslySetInnerHTML */}
@@ -83,8 +64,6 @@ export default function BlogPostPage() {
         </section>
 
       </main>
-
-      <CTA />
       <Footer />
       <WhatsApp />
     </>

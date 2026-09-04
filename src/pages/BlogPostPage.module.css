@@ -1,5 +1,5 @@
 .main {
-  background: #fcfcfc;
+  background: #ffffff;
   min-height: 100vh;
 }
 
@@ -35,8 +35,7 @@
 
 /* POST SECTION */
 .postSection {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 2px, transparent 2px);
-  background-size: 30px 30px;
+  background: #ffffff;
   padding-block: 60px 100px;
 }
 

@@ -1,4 +1,3 @@
-import CTA        from '../components/CTA'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './KeylaKinPage.module.css'
@@ -200,8 +199,6 @@ export default function KeylaKinPage() {
           </div>
         </section>
       </main>
-
-      <CTA />
       <Footer />
       <WhatsApp />
     </>

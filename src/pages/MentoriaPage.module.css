@@ -251,15 +251,32 @@
   color: #1a1610;
 }
 
-/* Weeks Grid — 2×2 card layout */
-.weeksGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.carouselActive {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 24px; /* Space for scrollbar / shadow */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  cursor: grab;
+}
+.carouselActive::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+.carouselActive:active {
+  cursor: grabbing;
+}
+
+.trackGroup {
+  display: flex;
   gap: 24px;
-  margin-top: 8px;
+  padding-right: 24px; /* Gap between this group and the next */
+  flex-shrink: 0;
 }
 
 .weekCard {
+  width: 80vw; /* Mobile width */
+  max-width: 350px;
+  flex-shrink: 0;
   background: linear-gradient(145deg, rgba(42, 33, 23, 0.5) 0%, rgba(26, 22, 16, 0.8) 100%);
   border: 1px solid rgba(212, 177, 112, 0.18);
   border-radius: 16px;
@@ -268,6 +285,19 @@
   flex-direction: column;
   gap: 12px;
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none; /* Prevent text selection while dragging */
+}
+
+@media (min-width: 768px) {
+  .weekCard {
+    width: 40vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .weekCard {
+    width: 350px;
+  }
 }
 
 .weekCard:hover {

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import CTA        from '../components/CTA'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './BlogPage.module.css'
@@ -10,30 +9,9 @@ import Reveal     from '../components/Reveal'
 const MOCK_POSTS = [
   {
     id: 1,
-    slug: 'alta-performance',
-    title: 'TÍTULO',
-    subtitle: 'subtítulo',
-    image: postImage
-  },
-  {
-    id: 2,
-    slug: 'mercado-imobiliario',
-    title: 'TÍTULO',
-    subtitle: 'subtítulo',
-    image: postImage
-  },
-  {
-    id: 3,
-    slug: 'dicas-de-venda',
-    title: 'TÍTULO',
-    subtitle: 'subtítulo',
-    image: postImage
-  },
-  {
-    id: 4,
-    slug: 'gestao-de-equipes',
-    title: 'TÍTULO',
-    subtitle: 'subtítulo',
+    slug: 'artigo-exemplo',
+    title: 'TÍTULO DO ARTIGO',
+    subtitle: 'Resumo ou subtítulo do artigo que será puxado do WordPress',
     image: postImage
   }
 ]
@@ -73,8 +51,6 @@ export default function BlogPage() {
         </section>
 
       </main>
-
-      <CTA />
       <Footer />
       <WhatsApp />
     </>

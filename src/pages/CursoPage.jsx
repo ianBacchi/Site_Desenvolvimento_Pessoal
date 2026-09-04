@@ -1,9 +1,6 @@
-import { Play } from 'lucide-react'
-import CTA        from '../components/CTA'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './CursoPage.module.css'
-import keylaPhoto from '../assets/keyla-curso-hero.png'
 import bgCurso    from '../assets/bg-curso.png'
 import Reveal     from '../components/Reveal'
 
@@ -37,7 +34,12 @@ export default function CursoPage() {
                 </div>
               </Reveal>
               <Reveal delay={0.8} direction="up">
-                <a href="#comprar" className={styles.heroBtn}>
+                <a 
+                  href="https://pay.hotmart.com/I104018704I?off=wylff7hn&hotfeature=51&_hi=eyJjaWQiOiIxNzgxNjUwMTE3MDE1NzczOTE4NDA3MTgzMTgyMzAwIiwiYmlkIjoiMTc4MTY1MDExNzAxNTc3MzkxODQwNzE4MzE4MjMwMCIsInNpZCI6ImVlMWI0ZjJkYmUyZjQ3NmQ5NjNjNTk1NTZhOWE0NzQ1In0=.1788460340205&bid=1788460341100" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.heroBtn}
+                >
                   COMPRE AGORA
                 </a>
               </Reveal>
@@ -45,60 +47,92 @@ export default function CursoPage() {
             
             <div className={styles.photoCol}>
               <Reveal delay={0.4} direction="left">
-                <img
-                  src={keylaPhoto}
-                  alt="Keyla Kin Curso"
-                  className={styles.keylaPhoto}
-                />
+                <div className={styles.videoWrapper}>
+                  <iframe 
+                    src="https://www.youtube.com/embed/062JzVBGm_s?autoplay=1"
+                    title="YouTube video player" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowFullScreen
+                    className={styles.iframeVideo}
+                  ></iframe>
+                </div>
               </Reveal>
             </div>
           </div>
         </section>
 
-        {/* SALES PITCH SECTION */}
-        <section className={styles.salesSection}>
-          <div className={`container ${styles.salesContainer}`}>
+        {/* TARGET AUDIENCE SECTION */}
+        <section className={styles.targetSection}>
+          <div className={`container ${styles.targetContainer}`}>
             <Reveal delay={0.2} direction="up">
-              <h2 className={styles.salesTitle}>
-                Descubra o que realmente funciona no dia a dia do corretor e alcance o sucesso nas suas vendas.
-              </h2>
+              <h2 className={styles.targetTitle}>Para quem é esse produto?</h2>
             </Reveal>
-            
-            <Reveal delay={0.4} direction="scale">
-              <div className={styles.videoWrapper}>
-                <div className={styles.videoPlaceholder}>
-                  <button className={styles.playBtn}>
-                    <Play size={48} fill="white" />
-                  </button>
-                </div>
-              </div>
-            </Reveal>
-            
-            <Reveal delay={0.5} direction="up">
-              <div className={styles.salesTextWrapper}>
-                <p>
-                  Com o Curso de Alta Performance para Corretores de Imóveis com Keyla Kin, aprenda o caminho completo da venda, desde o posicionamento até a negociação.
-                </p>
-                <p>
-                  Aprenda de forma simples, prática, sem teoria excessiva e sem enrolação, como destravar as vendas e se tornar um profissional mais organizado e confiante no processo comercial.
-                </p>
-                <p>
-                  Adquira o curso agora e alcance o sucesso nas suas vendas de imóveis.
+            <Reveal delay={0.4} direction="up">
+              <div className={styles.targetContentBox}>
+                <p>O curso Alta Performance para Corretores de Imóveis é para você que:</p>
+                <ul className={styles.targetList}>
+                  <li>Está começando na corretagem e quer aprender o caminho certo desde o início.</li>
+                  <li>Já atua como corretor, mas sente que trabalha muito e vende pouco.</li>
+                  <li>Quer sair do improviso e atuar com mais método, segurança e clareza.</li>
+                  <li>Deseja captar mais imóveis e atender clientes com postura profissional.</li>
+                  <li>Quer aumentar suas chances de fechamento sem depender de sorte.</li>
+                  <li>Enxerga a corretagem como carreira e não como bico.</li>
+                </ul>
+                <p className={styles.targetFooter}>
+                  Se você está disposto a aprender, aplicar e manter disciplina no dia a dia, esse curso foi feito para você. Aqui, o foco é prática, constância e resultado real no mercado imobiliário.
                 </p>
               </div>
-            </Reveal>
-            
-            <Reveal delay={0.6} direction="up">
-              <a href="#comprar" className={styles.salesBtn}>
-                QUERO O CURSO
-              </a>
             </Reveal>
           </div>
         </section>
 
-      </main>
+        {/* GUARANTEE & PRICING SECTION */}
+        <section className={styles.offerSection} id="comprar">
+          <div className={`container ${styles.offerContainer}`}>
+            
+            <div className={styles.pricingCard}>
+              <Reveal delay={0.2} direction="up">
+                <p className={styles.priceLabel}>POR APENAS</p>
+                <p className={styles.priceInstallments}>6x de</p>
+                <h2 className={styles.priceValue}>R$ 49,50</h2>
+                <p className={styles.priceCash}>
+                  ou R$ 297,00 à vista
+                </p>
+                <a 
+                  href="https://pay.hotmart.com/I104018704I?off=wylff7hn&hotfeature=51&_hi=eyJjaWQiOiIxNzgxNjUwMTE3MDE1NzczOTE4NDA3MTgzMTgyMzAwIiwiYmlkIjoiMTc4MTY1MDExNzAxNTc3MzkxODQwNzE4MzE4MjMwMCIsInNpZCI6ImVlMWI0ZjJkYmUyZjQ3NmQ5NjNjNTk1NTZhOWE0NzQ1In0=.1788460340205&bid=1788460341100" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.buyBtn}
+                >
+                  COMPRAR AGORA
+                </a>
+                <p className={styles.secureText}>PAGAMENTO 100% SEGURO COM ACESSO IMEDIATO</p>
+              </Reveal>
+            </div>
 
-      <CTA />
+            <div className={styles.offerCard}>
+              <Reveal delay={0.4} direction="up">
+                <h3 className={styles.guaranteeTitle}>Garantia incondicional de 7 dias</h3>
+                <p className={styles.guaranteeDesc}>
+                  Seu dinheiro de volta sem perguntas até 7 dias após a compra.
+                </p>
+              </Reveal>
+            </div>
+
+            <div className={styles.offerCard}>
+              <Reveal delay={0.6} direction="up">
+                <h3 className={styles.certificateTitle}>Certificado de Conclusão Digital</h3>
+                <p className={styles.certificateDesc}>
+                  Ao final do curso você receberá um Certificado Online que concluiu as aulas. Poderá compartilhar em plataformas digitais.
+                </p>
+              </Reveal>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
       <Footer />
       <WhatsApp />
     </>

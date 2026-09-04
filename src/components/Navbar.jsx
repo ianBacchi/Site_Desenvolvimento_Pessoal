@@ -5,6 +5,7 @@ import styles from './Navbar.module.css'
 import logoImg from '../assets/logo.png'
 
 const navLinks = [
+  { label: 'HOME',      to: '/' },
   { label: 'KEYLA KIN', to: '/keyla-kin' },
   { label: 'MENTORIA',  to: '/mentoria'  },
   { label: 'CURSO',     to: '/curso'     },

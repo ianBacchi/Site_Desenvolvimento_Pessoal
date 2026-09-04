@@ -1,5 +1,5 @@
 .main {
-  background: #dbdad8; /* Light gray background from the mockup */
+  background: var(--bg-primary);
   min-height: 100vh;
 }
 
@@ -52,39 +52,31 @@
 }
 
 /* Add some random sizes/aspect ratios to mimic the mockup */
-.collageItem:nth-child(1) .placeholderBox {
+.collageItem:nth-child(1) .collageImg {
   aspect-ratio: 3 / 4;
 }
-.collageItem:nth-child(2) .placeholderBox {
+.collageItem:nth-child(2) .collageImg {
   aspect-ratio: 4 / 3;
 }
-.collageItem:nth-child(3) .placeholderBox {
+.collageItem:nth-child(3) .collageImg {
   aspect-ratio: 16 / 9;
 }
-.collageItem:nth-child(4) .placeholderBox {
+.collageItem:nth-child(4) .collageImg {
   aspect-ratio: 3 / 4;
 }
 
-.placeholderBox {
+.collageImg {
   width: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px dashed rgba(0, 0, 0, 0.3);
   border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(0, 0, 0, 0.5);
-  font-family: var(--font-sans);
-  font-weight: 700;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: block;
 }
 
-.placeholderBox:hover {
+.collageImg:hover {
   transform: scale(1.05);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.9);
 }
 
 /* RESPONSIVE */
@@ -95,23 +87,11 @@
   }
 
   .keylaCol {
-    flex: none;
-    height: 50vh;
-    justify-content: center;
-    margin-bottom: -50px; /* Overlap slightly with gallery */
-  }
-
-  .keylaPhoto {
-    height: 100%;
-    transform: translateX(0);
+    display: none;
   }
 
   .galleryCol {
     padding: 20px;
-    background: #fdfbf7; /* Give the gallery a different background on mobile for separation */
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
   }
 
   .collageGrid {

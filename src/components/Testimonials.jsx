@@ -1,11 +1,15 @@
 import { Quote } from 'lucide-react'
 import styles from './Testimonials.module.css'
+import strip1 from '../assets/home-strip-1.jpg'
+import strip2 from '../assets/home-strip-5.jpg'
+import strip3 from '../assets/home-strip-3.jpg'
+import strip4 from '../assets/home-strip-4.jpg'
 
 const testimonials = [
   {
     name: 'Carlos Mendonça',
     role: 'Diretor de Imobiliária, SP',
-    text: 'A mentoria da Keyla transformou completamente a forma como gerencio minha equipe. Em 6 meses aumentamos o faturamento em 60% e reduímos a rotatividade de corretores.',
+    text: 'A mentoria da Keyla transformou completamente a forma como gerencio minha equipe. Em 6 meses aumentamos o faturamento em 60% e reduzimos a rotatividade de corretores.',
     stars: 5,
   },
   {
@@ -23,6 +27,8 @@ const testimonials = [
 ]
 
 export default function Testimonials() {
+  const stripPhotos = [strip1, strip2, strip3, strip4]
+
   return (
     <section id="depoimentos" className={`${styles.section} section-py`}>
       <div className="container">
@@ -56,11 +62,11 @@ export default function Testimonials() {
 
         {/* Event photo strip */}
         <div className={styles.photoStrip}>
-          {[1,2,3,4].map(i => (
+          {stripPhotos.map((photo, i) => (
             <div key={i} className={styles.stripPhoto}>
               <img
-                src={`https://placehold.co/300x200/1a1610/c9a84c?text=Evento+${i}`}
-                alt={`Evento ${i}`}
+                src={photo}
+                alt={`Keyla Kin - Experiência Internacional ${i + 1}`}
               />
             </div>
           ))}

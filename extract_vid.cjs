@@ -1,0 +1,1 @@
+const fs = require('fs'); const html = fs.readFileSync('C:/Users/ianba/.gemini/antigravity/brain/87ef6479-09d9-4c95-afa8-164d0ab87dfa/.system_generated/steps/694/content.md', 'utf8'); const m = html.match(/data-ls-video="([^"]+)"/); if (m) { console.log(m[1].replace(/&quot;/g, '"')); }

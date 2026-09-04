@@ -1,4 +1,5 @@
 import { MessageCircle } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
 import logoImg from '../assets/logo.png'
 
@@ -6,19 +7,17 @@ const navCols = [
   {
     heading: 'Soluções',
     links: [
-      { label: 'Mentoria Estratégica', href: '#mentoria' },
-      { label: 'Curso Online',         href: '#curso' },
-      { label: 'Palestras',            href: '#mentoria' },
-      { label: 'Livros',               href: '#livros' },
+      { label: 'Mentoria Estratégica', to: '/mentoria' },
+      { label: 'Curso Online',         to: '/curso' },
+      { label: 'Livros',               to: '/livros' },
     ],
   },
   {
     heading: 'Keyla Kin',
     links: [
-      { label: 'Sobre',       href: '#sobre' },
-      { label: 'Blog',        href: '#blog' },
-      { label: 'Depoimentos', href: '#depoimentos' },
-      { label: 'Contato',     href: '#contato' },
+      { label: 'Sobre',       to: '/keyla-kin' },
+      { label: 'Mídia',       to: '/midia' },
+      { label: 'Blog',        to: '/blog' },
     ],
   },
 ]
@@ -58,7 +57,7 @@ const socials = [
   },
   {
     icon: <MessageCircle size={18} />,
-    href: 'https://wa.me/5511999999999',
+    href: 'https://wa.me/5511984591195',
     label: 'WhatsApp',
   },
 ]
@@ -82,7 +81,9 @@ export default function Footer() {
 
           {/* Brand */}
           <div className={styles.brand}>
-            <img src={logoImg} alt="Keyla Kin Logo" style={{ maxWidth: '150px' }} />
+            <Link to="/">
+              <img src={logoImg} alt="Keyla Kin Logo" style={{ maxWidth: '150px' }} />
+            </Link>
             <p className={styles.tagline}>
               Mentoria, curso e estratégia para quem quer resultados reais no mercado imobiliário.
             </p>
@@ -103,7 +104,7 @@ export default function Footer() {
               <ul className={styles.colLinks}>
                 {col.links.map(l => (
                   <li key={l.label}>
-                    <a href={l.href} className={styles.colLink}>{l.label}</a>
+                    <Link to={l.to} className={styles.colLink}>{l.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -115,13 +116,13 @@ export default function Footer() {
             <h4 className={styles.colHead}>Contato</h4>
             <ul className={styles.colLinks}>
               <li><a href="mailto:contato@keylakin.com.br" className={styles.colLink}>contato@keylakin.com.br</a></li>
-              <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className={styles.colLink}>WhatsApp Direto</a></li>
+              <li><a href="https://wa.me/5511984591195" target="_blank" rel="noopener noreferrer" className={styles.colLink}>WhatsApp Direto</a></li>
             </ul>
           </div>
         </div>
 
         <div className={styles.bottom}>
-          <p>© {new Date().getFullYear()} Keyla Kin. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Keyla Kin. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
