@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from '../pages/MentoriaPage.module.css'
 
 const mentoriaData = {
@@ -50,26 +50,30 @@ export default function WeeksCarousel({ month }) {
           const jumpPoint = firstGroup.offsetWidth
           exactScroll.current += 1.2 // Velocidade de scroll
           
-          if (exactScroll.current >= jumpPoint) {
+          if (exactScroll.current >= jumpPoint * 2) {
             exactScroll.current -= jumpPoint
           }
           el.scrollLeft = exactScroll.current
         }
       } else if (el) {
-        // Se o usuário interagiu, sincronizamos a posição real
+        // Quando o usuário está arrastando ou usando o touch, paramos de forçar o loop pra não travar o dedo dele.
         exactScroll.current = el.scrollLeft
-        // Também aplicamos a lógica do loop infinito manualmente enquanto ele arrasta, para nunca bater no final!
-        const firstGroup = el.firstElementChild
-        if (firstGroup) {
-          const jumpPoint = firstGroup.offsetWidth
-          if (el.scrollLeft >= jumpPoint) {
-            el.scrollLeft -= jumpPoint
-            exactScroll.current -= jumpPoint
-          } else if (el.scrollLeft <= 0) {
-            // Se tentar rolar pra trás no começo, pula pro segundo set
-            el.scrollLeft += jumpPoint
-            exactScroll.current += jumpPoint
-          }
+        
+        // Apenas fazemos o loop SE ele não estiver interagindo ativamente (dedo solto, rolagem livre parando)
+        // E usamos uma margem segura pra não cortar o embalo (momentum).
+        if (!isInteracting && !isDragging) {
+            const firstGroup = el.firstElementChild
+            if (firstGroup) {
+              const jumpPoint = firstGroup.offsetWidth
+              if (el.scrollLeft >= jumpPoint * 2) {
+                el.scrollLeft -= jumpPoint
+                exactScroll.current -= jumpPoint
+              } else if (el.scrollLeft <= 5) {
+                // Se rolar demais pra trás, joga pro meio pra ter mais espaço
+                el.scrollLeft += jumpPoint
+                exactScroll.current += jumpPoint
+              }
+            }
         }
       }
       animationFrameId = requestAnimationFrame(scroll)
@@ -82,8 +86,11 @@ export default function WeeksCarousel({ month }) {
   // Reset when month changes
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollLeft = 0
-      exactScroll.current = 0
+      const firstGroup = scrollRef.current.firstElementChild
+      const jumpPoint = firstGroup ? firstGroup.offsetWidth : 0
+      // Começamos no segundo bloco para permitir que o usuário role para trás livremente sem bater na borda 0
+      scrollRef.current.scrollLeft = jumpPoint
+      exactScroll.current = jumpPoint
     }
   }, [month])
 
@@ -109,7 +116,6 @@ export default function WeeksCarousel({ month }) {
     scrollRef.current.scrollLeft = scrollLeft - walk
   }
 
-  // Função helper para renderizar um grupo
   const renderTrackGroup = (keyPrefix) => (
     <div className={styles.trackGroup} key={keyPrefix}>
       {weeks.map((week, idx) => (
@@ -134,19 +140,25 @@ export default function WeeksCarousel({ month }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
       onTouchStart={() => setIsInteracting(true)}
-      onTouchEnd={() => setIsInteracting(false)}
-      onWheel={() => setIsInteracting(true)}
+      onTouchEnd={() => {
+        // Dá um pequeno atraso antes de religar o loop pra não cortar o "embalo" do touch (momentum scrolling)
+        setTimeout(() => setIsInteracting(false), 800)
+      }}
+      onWheel={() => {
+        setIsInteracting(true)
+        // Reseta isInteracting após a rolagem do mouse parar
+        clearTimeout(window.wheelTimeout)
+        window.wheelTimeout = setTimeout(() => setIsInteracting(false), 800)
+      }}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
     >
-      {/* 
-        Renderizamos múltiplos grupos para dar a ilusão de um círculo infinito. 
-        3 grupos garantem que, mesmo em telas muito largas, não apareça espaço em branco.
-      */}
+      {/* 4 grupos para garantir espaço infinito para os dois lados (rolagem de segurança) */}
       {renderTrackGroup('track-1')}
       {renderTrackGroup('track-2')}
       {renderTrackGroup('track-3')}
+      {renderTrackGroup('track-4')}
     </div>
   )
 }

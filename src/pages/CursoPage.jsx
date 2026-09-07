@@ -95,7 +95,7 @@ export default function CursoPage() {
               <Reveal delay={0.2} direction="up">
                 <p className={styles.priceLabel}>POR APENAS</p>
                 <p className={styles.priceInstallments}>6x de</p>
-                <h2 className={styles.priceValue}>R$ 49,50</h2>
+                <h2 className={styles.priceValue}>R$ 55,72</h2>
                 <p className={styles.priceCash}>
                   ou R$ 297,00 à vista
                 </p>

@@ -52,7 +52,7 @@ export default function Hero() {
           <Reveal delay={0.6} direction="up">
             <div>
               <a
-                href="https://wa.me/5511999999999"
+                href="https://api.whatsapp.com/send?phone=5511984591195&text=Oi%20Keyla%2C%20gostaria%20de%20falar%20com%20voc%C3%AA%20sobre%20os%20seus%20servi%C3%A7os!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-gold"

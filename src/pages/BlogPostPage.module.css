@@ -5,7 +5,7 @@
 
 /* CUSTOM BLOG HEADER (Identical to BlogPage) */
 .blogHeader {
-  background: #333333; /* Dark gray */
+  background: #333333;
   position: relative;
   overflow: hidden;
   padding-top: 100px;
@@ -40,37 +40,42 @@
 }
 
 .postContainer {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  background: transparent;
 }
 
+/* 1. TÍTULO */
 .postHead {
   text-align: center;
-  margin-bottom: 50px;
-  /* Simulating the purple box from user design, but keeping it clean */
-  padding-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .postTitle {
   font-family: var(--font-sans);
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 800;
-  font-style: italic;
   color: #1a1610;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   text-transform: uppercase;
+  line-height: 1.3;
 }
 
-.postSubtitle {
-  font-family: var(--font-sans);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 700;
-  font-style: italic;
-  color: #1a1610;
-  text-transform: uppercase;
+/* 2. FOTO DE CAPA */
+.featuredImageWrapper {
+  width: 100%;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
+.postFeaturedImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 3. CONTEÚDO DO POST */
 .postBody {
   font-family: var(--font-sans);
   font-size: 1.1rem;
@@ -82,22 +87,63 @@
   margin-bottom: 24px;
 }
 
-.postFeaturedImage {
-  float: left;
-  max-width: 350px;
+.postBody img {
+  max-width: 100%;
   height: auto;
-  margin-right: 40px;
-  margin-bottom: 20px;
-  /* Keyla's photo in the design is a cutout. Float works well. */
+  border-radius: 8px;
+  margin-block: 20px;
 }
 
-/* Clearfix for floated content */
-.postBody::after {
-  content: "";
-  display: table;
-  clear: both;
+.postBody h2,
+.postBody h3,
+.postBody h4 {
+  color: #1a1610;
+  margin-top: 40px;
+  margin-bottom: 16px;
 }
 
+.postBody a {
+  color: var(--gold-primary);
+  text-decoration: underline;
+}
+
+.postBody blockquote {
+  border-left: 4px solid var(--gold-primary);
+  margin: 30px 0;
+  padding: 16px 24px;
+  background: #f9f6f0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #555;
+}
+
+.postBody ul,
+.postBody ol {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.postBody li {
+  margin-bottom: 8px;
+}
+
+/* Audio e video do WordPress */
+.postBody audio,
+.postBody video {
+  width: 100%;
+  margin-block: 20px;
+  border-radius: 8px;
+}
+
+.postBody iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: none;
+  border-radius: 8px;
+  margin-block: 20px;
+}
+
+/* VOLTAR */
 .backLinkWrapper {
   margin-top: 60px;
   padding-top: 30px;
@@ -120,10 +166,7 @@
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .postFeaturedImage {
-    float: none;
-    display: block;
-    margin: 0 auto 30px auto;
-    max-width: 100%;
+  .postContainer {
+    padding-inline: 20px;
   }
 }
