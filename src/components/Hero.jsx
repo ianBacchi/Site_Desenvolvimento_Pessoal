@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import styles from './Hero.module.css'
 import cityBg from '../assets/city-bg.png'
-import keylaCutout from '../assets/keyla-cutout.png'
+import keylaCutout from '../assets/keyla-cutout-new.png'
 import Reveal from './Reveal'
 
 export default function Hero() {
@@ -36,16 +36,20 @@ export default function Hero() {
 
         {/* Text on the right */}
         <div className={styles.textBlock}>
+          <Reveal delay={0.1} direction="up">
+            <span className={styles.nameLabel}>KEYLA KIN</span>
+          </Reveal>
+
           <Reveal delay={0.2} direction="up">
-            <h1 className={styles.title}>KEYLA KIN</h1>
+            <h1 className={styles.title}>De panfleteira a CEO de uma imobiliária que fatura R$ 97 milhões em VGV.</h1>
           </Reveal>
           
           <Reveal delay={0.4} direction="up">
             <div className={styles.subtitle}>
-              <p>CEO Kin Imóveis Advogada</p>
-              <p>Corretora de Imóveis</p>
-              <p>Mentora</p>
-              <p>CRECI 131.693</p>
+              <p>Advogada, corretora e fundadora da Kin Imóveis, ajudo donos de imobiliária a saírem da torcida e passarem a gerir de verdade.</p>
+            </div>
+            <div className={styles.description}>
+              <p>Comecei entregando panfleto na rua em São José do Rio Preto para pagar as contas. Vim para São Paulo, entrei no mercado imobiliário vendendo lançamentos do Minha Casa Minha Vida, passei por mais duas imobiliárias e em 2015 fundei a Kin Imóveis. Em 2024 mudei minha forma de gerir e levei o VGV de R$ 66 milhões para R$ 97 milhões em um ano, um crescimento de 47%. Hoje ajudo outros donos de imobiliária a percorrerem esse mesmo caminho.</p>
             </div>
           </Reveal>
           
