@@ -17,9 +17,9 @@ export default function HomePage() {
         <About /> {/* Quote section */}
         <Stats />
         <Trajetoria />
-        <LatestPosts />
         <Services />
         <CTA />
+        <LatestPosts />
         <Testimonials />
       </main>
       <Footer />
