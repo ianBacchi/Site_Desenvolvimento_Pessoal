@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import { ChevronDown, ChevronUp, Briefcase, TrendingDown, Target, Dices, Check, ArrowRight } from 'lucide-react'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './MentoriaPage.module.css'
@@ -9,6 +9,108 @@ import bgMentoria from '../assets/bg-mentoria.png'
 
 import Reveal from '../components/Reveal'
 import WeeksCarousel from '../components/WeeksCarousel'
+import CountUp from '../components/CountUp'
+
+const painPoints = [
+  {
+    icon: <Briefcase size={28} />,
+    title: 'Vendedor da própria empresa',
+    desc: 'Você é o melhor vendedor da sua própria imobiliária e por isso não consegue sair da operação.'
+  },
+  {
+    icon: <TrendingDown size={28} />,
+    title: 'Crescimento sem resultado',
+    desc: 'A equipe cresce, mas o resultado não acompanha na mesma proporção.'
+  },
+  {
+    icon: <Target size={28} />,
+    title: 'Sem números claros',
+    desc: 'Não existe um número claro de meta, funil e produtividade por corretor.'
+  },
+  {
+    icon: <Dices size={28} />,
+    title: 'Mês no improviso',
+    desc: 'Todo mês termina na base do improviso e da torcida.'
+  },
+]
+
+const WHATS_BASE = 'https://api.whatsapp.com/send?phone=5511984591195&text='
+
+const plans = [
+  {
+    name: 'Diagnóstico KIN',
+    desc: 'Para quem quer enxergar onde está o gargalo antes de começar. Um dia de análise profunda da sua operação.',
+    price: 'R$ 3.200',
+    installment: 'À vista ou em até 6x no cartão (juros da operadora)',
+    duration: 'Imersão de 1 dia',
+    features: [
+      'Análise do funil de vendas atual',
+      'Mapeamento de processos comerciais',
+      'Planilha de indicadores pronta para usar',
+      'Plano de ação com prioridades',
+      '1 visita na Kin Imóveis',
+    ],
+    cta: 'Quero o diagnóstico',
+    whats: WHATS_BASE + encodeURIComponent('Oi Keyla, quero saber mais sobre o Diagnóstico KIN'),
+  },
+  {
+    name: 'Método KIN',
+    badge: 'Mais procurado',
+    featured: true,
+    desc: 'A mentoria que apliquei na Kin Imóveis para sair de R$ 66 milhões para R$ 97 milhões em VGV em 12 meses.',
+    price: 'R$ 7.000',
+    installment: 'À vista ou em até 12x no cartão (juros da operadora) ou no boleto sem juros de R$ 1.250,00',
+    duration: '4 meses de mentoria em grupo',
+    features: [
+      'Sessões semanais ao vivo em grupo',
+      'Materiais entregues em cada etapa',
+      'Planilhas de gestão e modelos de contrato',
+      'Acompanhamento mensal de metas',
+      'Comunidade de donos de imobiliária',
+    ],
+    cta: 'Quero entrar na próxima turma',
+    whats: WHATS_BASE + encodeURIComponent('Oi Keyla, quero entrar na próxima turma do Método KIN'),
+  },
+  {
+    name: 'Mentoria Individual',
+    desc: 'Para donos que querem olhar a fundo na sua imobiliária com encontros personalizados e acompanhamento próximo.',
+    price: 'R$ 11.500',
+    installment: 'À vista ou em até 12x no cartão (juros da operadora) ou no boleto sem juros de R$ 2.000,00',
+    duration: '4 meses de acompanhamento 1:1',
+    features: [
+      'Encontros quinzenais 1:1 com Keyla Kin',
+      'Diagnóstico KIN com direito a 1 visita na Kin Imóveis',
+      'Plano de implementação sob medida',
+      'Intermediação direta com sua equipe',
+      'Acesso aos materiais do Método KIN',
+    ],
+    cta: 'Quero a mentoria individual',
+    whats: WHATS_BASE + encodeURIComponent('Oi Keyla, quero saber mais sobre a Mentoria Individual'),
+  },
+]
+
+const pilares = [
+  {
+    num: '01',
+    title: 'Diagnóstico e números',
+    desc: 'Mapeamos VGV, funil, ticket médio, quantidade de visitas e propostas, analisando cada etapa para identificar exatamente onde está o gargalo do time.',
+  },
+  {
+    num: '02',
+    title: 'Captação e processo comercial',
+    desc: 'Rotina de captação estruturada, do zero até como montar uma equipe própria de captação, além de atendimento e follow up com responsáveis definidos.',
+  },
+  {
+    num: '03',
+    title: 'Time e liderança',
+    desc: 'Recrutamento, treinamento, integração dos primeiros 60 dias e ritual semanal de gestão.',
+  },
+  {
+    num: '04',
+    title: 'Blindagem jurídica',
+    desc: 'Contratos, modelos, exclusividade e comissão revisados com olhar de advogada.',
+  },
+]
 
 export default function MentoriaPage() {
   const [selectedMonth, setSelectedMonth] = useState(1)
@@ -31,14 +133,13 @@ export default function MentoriaPage() {
               </Reveal>
               <Reveal delay={0.4} direction="up">
                 <h1 className={styles.heroTitle}>
-                  ALTA PERFORMANCE PARA <br />
-                  CORRETORES DE IMÓVEIS
+                  Método KIN: a gestão que fez minha imobiliária crescer, aplicada na sua.
                 </h1>
               </Reveal>
               <Reveal delay={0.6} direction="up">
                 <p className={styles.heroDesc}>
-                  Descubra o que realmente funciona no dia a dia do corretor de 
-                  imóveis e alcance o sucesso nas suas vendas.
+                  Quatro meses de mentoria em grupo com sessões semanais, para donos e
+                  gestores que querem sair da operação e comandar o negócio pelos números.
                 </p>
               </Reveal>
               <Reveal delay={0.8} direction="up">
@@ -61,6 +162,147 @@ export default function MentoriaPage() {
                   className={styles.keylaPhoto}
                 />
               </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* VOCÊ SE RECONHECE AQUI SECTION */}
+        <section className={styles.painSection}>
+          <div className={`container ${styles.painContainer}`}>
+            <Reveal delay={0.2}>
+              <div className={styles.painHeader}>
+                <h2 className={styles.painTitle}>Você se reconhece aqui?</h2>
+              </div>
+            </Reveal>
+
+            <div className={styles.painGrid}>
+              {painPoints.map((p, i) => (
+                <Reveal key={i} delay={0.1 * i} direction="up" fullHeight={true}>
+                  <div className={styles.painCard} style={{ height: '100%' }}>
+                    <div className={styles.painCardHeader}>
+                      <span className={styles.painCardIcon}>{p.icon}</span>
+                      <h3 className={styles.painCardTitle}>{p.title}</h3>
+                    </div>
+                    <p className={styles.painCardDesc}>{p.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PROVA SOCIAL SECTION */}
+        <section className={styles.proofSection}>
+          <div className={`container ${styles.proofGrid}`}>
+            <Reveal delay={0.1} direction="up">
+              <div>
+                <p className={styles.proofLabel}>Prova social</p>
+                <h2 className={styles.proofTitle}>
+                  De <CountUp to="66" prefix="R$ " suffix=" milhões" duration={2} /><br />
+                  para <CountUp to="97" prefix="R$ " suffix=" milhões" duration={2} />
+                </h2>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.3} direction="up">
+              <div className={styles.proofStat}>
+                <span className={styles.proofPercent}>
+                  <CountUp to="47" suffix="%" duration={2} />
+                </span>
+                <p className={styles.proofGrowthLabel}>de crescimento em 12 meses</p>
+                <p className={styles.proofCaption}>
+                  Gestão de leads estruturada. Marca pessoal no Instagram.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* OS 4 PILARES SECTION */}
+        <section className={styles.pilaresSection}>
+          <div className="container">
+            <Reveal direction="up">
+              <div className={styles.pilaresHeader}>
+                <h2 className={styles.pilaresTitle}>
+                  OS <span className={styles.pilaresNum}>4</span> PILARES
+                </h2>
+              </div>
+            </Reveal>
+
+            <div className={styles.pilaresGrid}>
+              {pilares.map((p, i) => (
+                <Reveal key={p.num} delay={0.15 * i} direction="up">
+                  <div className={styles.pilarItem}>
+                    <span className={styles.pilarBg} aria-hidden="true">{p.num.replace('0', '')}</span>
+                    <span className={styles.pilarIndex}>{p.num}</span>
+                    <h3 className={styles.pilarTitle}>{p.title}</h3>
+                    <p className={styles.pilarDesc}>{p.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal delay={0.6} direction="up">
+              <div className={styles.pilaresCtaWrap}>
+                <button
+                  type="button"
+                  className={styles.pilaresBtn}
+                  onClick={() => document.getElementById('planos')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                >
+                  Conhecer o Método KIN <ArrowRight size={16} />
+                </button>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* PLANOS SECTION */}
+        <section id="planos" className={styles.plansSection}>
+          <div className="container">
+            <div className={styles.plansHeader}>
+              <Reveal direction="up">
+                <h2 className={styles.plansTitle}>Planos</h2>
+                <p className={styles.plansSubtitle}>
+                  Escolha o formato ideal para estruturar sua imobiliária.
+                </p>
+              </Reveal>
+            </div>
+
+            <div className={styles.plansGrid}>
+              {plans.map((p, i) => (
+                <Reveal key={p.name} delay={0.1 * i} direction="up" fullHeight={true}>
+                  <div className={`${styles.planCard} ${p.featured ? styles.planCardFeatured : ''}`} style={{ height: '100%' }}>
+                    {p.badge && <span className={styles.planBadge}>{p.badge}</span>}
+
+                    <h3 className={styles.planName}>{p.name}</h3>
+                    <p className={styles.planDesc}>{p.desc}</p>
+
+                    <div className={styles.planPriceBlock}>
+                      <span className={styles.planPrice}>{p.price}</span>
+                      <p className={styles.planInstallment}>{p.installment}</p>
+                    </div>
+                    <p className={styles.planDuration}>{p.duration}</p>
+
+                    <ul className={styles.planFeatures}>
+                      {p.features.map(f => (
+                        <li key={f}>
+                          <Check size={16} className={styles.planCheck} />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <a
+                      href={p.whats}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={p.featured ? styles.planBtnFeatured : styles.planBtnOutline}
+                    >
+                      {p.cta} <ArrowRight size={16} />
+                    </a>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>

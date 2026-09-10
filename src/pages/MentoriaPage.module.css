@@ -65,7 +65,7 @@
   display: block;
 }
 
-.textCol {
+.textBlock {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -84,7 +84,7 @@
   margin-bottom: 24px;
 }
 
-.heroSubtitle {
+.heroDesc {
   font-family: var(--font-sans);
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   color: var(--text-white);
@@ -109,6 +109,482 @@
 .heroBtn:hover {
   background-color: var(--gold-primary);
   color: #000;
+}
+
+/* PAIN POINTS SECTION ("Você se reconhece aqui?") */
+.painSection {
+  position: relative;
+  background: linear-gradient(to bottom, #d4b170 0%, #b8963e 100%);
+  overflow: hidden;
+  padding-block: 80px;
+}
+
+.painContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.painHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.painTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #1a1610;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.painGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.painCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background: #2a2117;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform var(--dur) var(--ease);
+}
+
+.painCard:hover {
+  transform: translateY(-4px);
+}
+
+.painCardHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.painCardIcon {
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.painCardTitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.painCardDesc {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .painGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .painGrid { grid-template-columns: 1fr; }
+}
+
+/* PROVA SOCIAL SECTION */
+.proofSection {
+  background: var(--bg-primary);
+  padding-block: 70px;
+}
+
+.proofGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.proofLabel {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.proofTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text-white);
+  line-height: 1.25;
+}
+
+.proofStat {
+  border-left: 1px solid var(--gold-border);
+  padding-left: 32px;
+}
+
+.proofPercent {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  color: #c2603a;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.proofGrowthLabel {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-white);
+  margin-bottom: 16px;
+}
+
+.proofCaption {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .proofGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .proofStat {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--gold-border);
+    padding-top: 28px;
+  }
+}
+
+/* OS 4 PILARES SECTION */
+.pilaresSection {
+  background: var(--bg-primary);
+  padding-block: 80px;
+  overflow: hidden;
+}
+
+.pilaresHeader {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.pilaresTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-white);
+}
+
+.pilaresNum {
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  font-style: italic;
+  color: var(--gold-primary);
+  line-height: 1;
+}
+
+.pilaresGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--gold-border);
+}
+
+.pilarItem {
+  position: relative;
+  padding: 36px 40px;
+  border-bottom: 1px solid var(--gold-border);
+  overflow: hidden;
+}
+
+.pilarItem:nth-child(odd) {
+  border-right: 1px solid var(--gold-border);
+}
+
+.pilarBg {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-family: var(--font-serif);
+  font-size: 7rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  opacity: 0.08;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.pilarIndex {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #c2603a;
+  margin-bottom: 10px;
+}
+
+.pilarTitle {
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 12px;
+}
+
+.pilarDesc {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--text-off);
+  line-height: 1.7;
+  max-width: 46ch;
+}
+
+.pilaresCtaWrap {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.pilaresBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  border-radius: 4px;
+  background: var(--gold-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pilaresBtn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .pilaresGrid {
+    grid-template-columns: 1fr;
+  }
+  .pilarItem:nth-child(odd) {
+    border-right: none;
+  }
+  .pilarItem {
+    padding: 28px 24px;
+  }
+  .pilarBg {
+    font-size: 5rem;
+  }
+}
+
+/* PLANOS SECTION */
+.plansSection {
+  background: var(--bg-primary);
+  padding-block: 70px 40px;
+}
+
+.plansHeader {
+  text-align: center;
+}
+
+.plansTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--gold-primary);
+  margin-bottom: 14px;
+}
+
+.plansSubtitle {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-off);
+}
+
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 48px;
+}
+
+.planCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: 12px;
+  padding: 32px 28px;
+}
+
+.planCardFeatured {
+  border-color: var(--gold-primary);
+  background: var(--bg-card-hover);
+}
+
+.planBadge {
+  position: absolute;
+  top: -13px;
+  left: 28px;
+  background: var(--gold-primary);
+  color: #1a1610;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+.planName {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  margin-bottom: 12px;
+}
+
+.planDesc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-off);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.planPriceBlock {
+  margin-bottom: 6px;
+}
+
+.planPrice {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.planInstallment {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.planDuration {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.planFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+.planFeatures li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-off);
+  line-height: 1.5;
+}
+
+.planCheck {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--gold-primary);
+}
+
+.planBtnOutline,
+.planBtnFeatured {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.planBtnOutline {
+  border: 1px solid var(--gold-border);
+  color: var(--gold-primary);
+  background: transparent;
+}
+
+.planBtnOutline:hover {
+  border-color: var(--gold-primary);
+  background: var(--gold-muted);
+}
+
+.planBtnFeatured {
+  background: var(--gold-primary);
+  color: var(--bg-primary);
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.35);
+}
+
+.planBtnFeatured:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .plansGrid {
+    grid-template-columns: 1fr;
+  }
+  .planCardFeatured {
+    order: -1;
+  }
 }
 
 /* OBJECTIVE SECTION */
