@@ -103,7 +103,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://wa.me/5511999999999"
+            href="https://wa.me/5511984591195"
             target="_blank"
             rel="noopener noreferrer"
             className={`btn btn-gold ${styles.drawerCta}`}
