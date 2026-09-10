@@ -2,6 +2,8 @@ import { MessageCircle } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
 import logoImg from '../assets/logo.png'
+import footerBg from '../assets/footer-bg.jpg'
+import kkWatermark from '../assets/kk-watermark.png'
 
 const navCols = [
   {
@@ -15,7 +17,6 @@ const navCols = [
   {
     heading: 'Keyla Kin',
     links: [
-      { label: 'Sobre',       to: '/keyla-kin' },
       { label: 'Mídia',       to: '/midia' },
       { label: 'Blog',        to: '/blog' },
     ],
@@ -66,14 +67,10 @@ const socials = [
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      {/* Chevron gold pattern top */}
-      <div className={styles.chevronBar} aria-hidden="true">
-        {Array.from({ length: 12 }).map((_, i) => (
-          <svg key={i} viewBox="0 0 40 60" className={styles.chevSvg}>
-            <polyline points="5,5 20,30 5,55"  stroke="#c9a84c" strokeWidth="3" fill="none"/>
-            <polyline points="18,5 33,30 18,55" stroke="#c9a84c" strokeWidth="1.5" fill="none"/>
-          </svg>
-        ))}
+      <div className={styles.bgWrap} aria-hidden="true">
+        <img src={footerBg} alt="" className={styles.bgImage} />
+        <div className={styles.bgOverlay} />
+        <img src={kkWatermark} alt="" className={styles.bgMark} />
       </div>
 
       <div className="container">

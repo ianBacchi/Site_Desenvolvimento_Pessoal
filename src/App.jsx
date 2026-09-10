@@ -6,7 +6,6 @@ import ScrollToTop   from './components/ScrollToTop'
 
 // ── Pages ──────────────────────────────────
 import HomePage      from './pages/HomePage'
-import KeylaKinPage  from './pages/KeylaKinPage'
 import MentoriaPage  from './pages/MentoriaPage'
 import CursoPage     from './pages/CursoPage'
 import LivrosPage    from './pages/LivrosPage'
@@ -25,7 +24,6 @@ export default function App() {
 
       <Routes>
         <Route path="/"           element={<HomePage />}     />
-        <Route path="/keyla-kin"  element={<KeylaKinPage />} />
         <Route path="/mentoria"   element={<MentoriaPage />} />
         <Route path="/curso"      element={<CursoPage />}    />
         <Route path="/livros"     element={<LivrosPage />}   />

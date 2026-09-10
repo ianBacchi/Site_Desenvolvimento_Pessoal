@@ -22,7 +22,9 @@
   font-size: 6rem;
   line-height: 0.5;
   color: var(--gold-primary);
-  margin-bottom: 20px;
+  /* O glifo da aspa no Cinzel renderiza acima da propria caixa, deixando ~70px vazios abaixo dele */
+  margin-bottom: -49px;
+  margin-left: -6px;
 }
 
 .quoteMarksDown {

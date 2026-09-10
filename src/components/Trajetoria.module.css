@@ -1,0 +1,104 @@
+.section {
+  background: var(--bg-primary);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding-block: 80px;
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  font-weight: 600;
+  color: var(--text-white);
+  line-height: 1.25;
+  margin-bottom: 28px;
+}
+
+.text {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-off);
+  line-height: 1.75;
+  max-width: 52ch;
+  margin-bottom: 20px;
+}
+
+/* ── Faixa de credenciais ── */
+.credentials {
+  background: var(--bg-section-alt);
+  border-top: 1px solid var(--gold-border);
+  padding-block: 40px 48px;
+}
+
+.credentialsLabel {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 28px;
+}
+
+.credentialsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.credential {
+  border-top: 1px solid var(--gold-border);
+  padding-top: 16px;
+}
+
+.credentialTitle {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  margin-bottom: 8px;
+}
+
+.credentialDesc {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-off);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-block: 56px;
+  }
+
+  .photo {
+    aspect-ratio: 4 / 5;
+    max-height: 60vh;
+  }
+
+  .credentialsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .credentialsGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -3,10 +3,20 @@
   padding-block: 40px;
 }
 
+.year {
+  font-family: var(--font-sans);
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  font-weight: 800;
+  font-style: italic;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
 .inner {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   gap: 24px;
 }
 
@@ -40,6 +50,7 @@
   color: #000000;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  line-height: 1.35;
 }
 
 @media (max-width: 768px) {
