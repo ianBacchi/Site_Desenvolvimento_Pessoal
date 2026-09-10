@@ -112,7 +112,7 @@ export default function CursoPage() {
             </div>
 
             <div className={styles.offerCard}>
-              <Reveal delay={0.4} direction="up">
+              <Reveal delay={0.1} direction="up">
                 <h3 className={styles.guaranteeTitle}>Garantia incondicional de 7 dias</h3>
                 <p className={styles.guaranteeDesc}>
                   Seu dinheiro de volta sem perguntas até 7 dias após a compra.
@@ -121,7 +121,7 @@ export default function CursoPage() {
             </div>
 
             <div className={styles.offerCard}>
-              <Reveal delay={0.6} direction="up">
+              <Reveal delay={0.2} direction="up">
                 <h3 className={styles.certificateTitle}>Certificado de Conclusão Digital</h3>
                 <p className={styles.certificateDesc}>
                   Ao final do curso você receberá um Certificado Online que concluiu as aulas. Poderá compartilhar em plataformas digitais.

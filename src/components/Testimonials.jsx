@@ -1,4 +1,3 @@
-import { Quote } from 'lucide-react'
 import styles from './Testimonials.module.css'
 import strip1 from '../assets/home-strip-1.jpg'
 import strip2 from '../assets/home-strip-5.jpg'
@@ -49,20 +48,10 @@ export default function Testimonials() {
         <div className={styles.grid}>
           {testimonials.map((t, i) => (
             <div key={i} className={styles.card}>
-              <Quote size={24} className={styles.quoteIcon} />
+              <img src={t.img} alt={t.name} className={styles.avatar} />
               <p className={styles.text}>"{t.text}"</p>
-              <div className={styles.stars}>
-                {'★'.repeat(t.stars)}
-              </div>
-              <div className={styles.author}>
-                <div className={styles.avatar}>
-                  <img src={t.img} alt={t.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
-                </div>
-                <div>
-                  <div className={styles.name}>{t.name}</div>
-                  <div className={styles.role}>{t.role}</div>
-                </div>
-              </div>
+              <div className={styles.name}>{t.name}</div>
+              <div className={styles.role}>{t.role}</div>
             </div>
           ))}
         </div>

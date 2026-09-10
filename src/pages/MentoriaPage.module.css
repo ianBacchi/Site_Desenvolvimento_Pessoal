@@ -211,6 +211,8 @@
   grid-template-columns: 1.3fr 1fr;
   gap: 40px;
   align-items: center;
+  justify-items: center;
+  text-align: center;
 }
 
 .proofLabel {
@@ -234,6 +236,9 @@
 .proofStat {
   border-left: 1px solid var(--gold-border);
   padding-left: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .proofPercent {
@@ -241,7 +246,7 @@
   font-family: var(--font-serif);
   font-size: clamp(2.4rem, 4.5vw, 3.4rem);
   font-weight: 700;
-  color: #c2603a;
+  color: var(--gold-primary);
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -342,7 +347,7 @@
   font-family: var(--font-sans);
   font-size: 0.85rem;
   font-weight: 700;
-  color: #c2603a;
+  color: var(--gold-primary);
   margin-bottom: 10px;
 }
 
@@ -587,6 +592,181 @@
   }
 }
 
+/* DEPOIMENTOS SECTION */
+.testiSection {
+  background: var(--bg-primary);
+  padding-block: 70px;
+}
+
+.testiLabel {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.testiGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testiCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.testiAvatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--gold-border);
+  margin-bottom: 18px;
+}
+
+.testiQuote {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--text-off);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.testiName {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+}
+
+.testiRole {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .testiGrid { grid-template-columns: 1fr; }
+}
+
+/* FAQ SECTION */
+.faqSection {
+  background: var(--bg-primary);
+  padding-block: 30px 70px;
+}
+
+.faqLabel {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.faqList {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.faqQuestion {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 22px 0;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-white);
+  text-align: center;
+}
+
+.faqQuestion svg {
+  position: absolute;
+  right: 0;
+}
+
+.faqQuestion:hover {
+  color: var(--gold-primary);
+}
+
+.faqAnswer {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--text-off);
+  line-height: 1.7;
+  padding-bottom: 22px;
+  max-width: 65ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* TURMAS REDUZIDAS BANNER */
+.closeBanner {
+  background: var(--bg-card);
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  padding-block: 40px;
+}
+
+.closeBannerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.closeBannerText {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.closeBannerBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 16px 32px;
+  border-radius: 4px;
+  background: var(--gold-primary);
+  color: var(--bg-primary);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.3s ease;
+}
+
+.closeBannerBtn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
 /* OBJECTIVE SECTION */
 .objectiveSection {
   background: radial-gradient(circle at center, #5a4b2c 0%, #1a1610 80%);
@@ -643,6 +823,7 @@
 .timelineContainer {
   max-width: 1000px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .monthBlock {
@@ -760,6 +941,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  text-align: left;
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   user-select: none; /* Prevent text selection while dragging */
 }

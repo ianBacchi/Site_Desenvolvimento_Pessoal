@@ -6,6 +6,9 @@ import styles     from './MentoriaPage.module.css'
 import keylaPhoto from '../assets/keyla-mentoria-hero.png'
 import logoImg    from '../assets/logo.png'
 import bgMentoria from '../assets/bg-mentoria.png'
+import imgRenata  from '../assets/testi-renata.jpg'
+import imgDiego   from '../assets/testi-diego.jpg'
+import imgPaulo   from '../assets/testi-paulo.jpg'
 
 import Reveal from '../components/Reveal'
 import WeeksCarousel from '../components/WeeksCarousel'
@@ -112,9 +115,54 @@ const pilares = [
   },
 ]
 
+const testimonials = [
+  {
+    quote: 'Em quatro meses saí de planilha bagunçada para uma rotina de gestão semanal. O time dobrou o número de visitas.',
+    name: 'Renata M.',
+    role: 'Sócia de imobiliária, Curitiba',
+    img: imgRenata,
+  },
+  {
+    quote: 'A Keyla não entrega teoria. Ela senta com o seu número, aponta o gargalo e cobra na semana seguinte.',
+    name: 'Diego A.',
+    role: 'Gestor comercial, Londrina',
+    img: imgDiego,
+  },
+  {
+    quote: 'Meu maior ganho foi parar de vender sozinho. Hoje tenho seis corretores produzindo com processo.',
+    name: 'Paulo S.',
+    role: 'Dono de imobiliária, Maringá',
+    img: imgPaulo,
+  },
+]
+
+const faqs = [
+  {
+    q: 'Para quem é a mentoria?',
+    a: 'Para donos e gestores de imobiliária que já têm equipe e faturamento, mas sentem que o crescimento não é previsível nem depende de um processo claro.',
+  },
+  {
+    q: 'Qual é o formato?',
+    a: '4 meses de mentoria em grupo, com sessões semanais ao vivo, materiais entregues em cada etapa e acompanhamento mensal de metas.',
+  },
+  {
+    q: 'Quanto custa?',
+    a: 'R$ 7.000, à vista ou em até 12x no cartão (juros da operadora), ou no boleto sem juros de R$ 1.250,00.',
+  },
+  {
+    q: 'Preciso ter equipe grande?',
+    a: 'Não. A mentoria serve tanto para quem está começando a estruturar a equipe quanto para quem já lidera um time maior.',
+  },
+  {
+    q: 'E se eu não conseguir acompanhar ao vivo?',
+    a: 'Todas as sessões ficam gravadas e disponíveis na plataforma, então você acompanha no seu ritmo.',
+  },
+]
+
 export default function MentoriaPage() {
   const [selectedMonth, setSelectedMonth] = useState(1)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [openFaq, setOpenFaq] = useState(null)
 
   return (
     <>
@@ -196,7 +244,6 @@ export default function MentoriaPage() {
           <div className={`container ${styles.proofGrid}`}>
             <Reveal delay={0.1} direction="up">
               <div>
-                <p className={styles.proofLabel}>Prova social</p>
                 <h2 className={styles.proofTitle}>
                   De <CountUp to="66" prefix="R$ " suffix=" milhões" duration={2} /><br />
                   para <CountUp to="97" prefix="R$ " suffix=" milhões" duration={2} />
@@ -307,6 +354,101 @@ export default function MentoriaPage() {
           </div>
         </section>
 
+        {/* TIMELINE SECTION */}
+        <section className={styles.timelineSection}>
+          <div className={`container ${styles.timelineContainer}`}>
+            <Reveal delay={0.2} direction="up">
+              <div className={styles.monthBlock}>
+                <div className={styles.monthHeaderWrapper}>
+                  <div
+                    className={styles.monthPill}
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  >
+                    MENTORIA PARA GESTORES - MÊS {selectedMonth}
+                    <span className={styles.monthToggleIcon}>
+                      {isDropdownOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    </span>
+                  </div>
+
+                  {isDropdownOpen && (
+                    <div className={styles.dropdownMenu}>
+                      {[1, 2, 3, 4].map(m => (
+                        <button
+                          key={m}
+                          className={`${styles.dropdownItem} ${selectedMonth === m ? styles.activeItem : ''}`}
+                          onClick={() => {
+                            setSelectedMonth(m)
+                            setIsDropdownOpen(false)
+                          }}
+                        >
+                          MÊS {m}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <WeeksCarousel month={selectedMonth} />
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.2} direction="up">
+              <div className={styles.timelineAction}>
+                <a
+                  href="https://api.whatsapp.com/send?phone=5511984591195&text=Oi%20Keyla%20quero%20aplicar%20a%20mentoria%2C%20me%20conte%20mais%20sobre%20como%20funciona"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.applyBtn}
+                >
+                  QUERO APLICAR
+                </a>
+              </div>
+            </Reveal>
+
+          </div>
+        </section>
+
+        {/* DEPOIMENTOS SECTION */}
+        <section className={styles.testiSection}>
+          <div className="container">
+            <p className={styles.testiLabel}>Depoimentos</p>
+            <div className={styles.testiGrid}>
+              {testimonials.map((t, i) => (
+                <Reveal key={t.name} delay={0.1 * i} direction="up" fullHeight={true}>
+                  <div className={styles.testiCard} style={{ height: '100%' }}>
+                    <img src={t.img} alt={t.name} className={styles.testiAvatar} />
+                    <p className={styles.testiQuote}>"{t.quote}"</p>
+                    <p className={styles.testiName}>{t.name}</p>
+                    <p className={styles.testiRole}>{t.role}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ SECTION */}
+        <section className={styles.faqSection}>
+          <div className="container">
+            <p className={styles.faqLabel}>Perguntas frequentes</p>
+            <div className={styles.faqList}>
+              {faqs.map((f, i) => (
+                <div key={f.q} className={styles.faqItem}>
+                  <button
+                    type="button"
+                    className={styles.faqQuestion}
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  >
+                    {f.q}
+                    {openFaq === i ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                  </button>
+                  {openFaq === i && <p className={styles.faqAnswer}>{f.a}</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* OBJETIVOS SECTION */}
         <section className={styles.objectiveSection}>
           <div className={`container ${styles.objectiveContainer}`}>
@@ -328,57 +470,20 @@ export default function MentoriaPage() {
           </div>
         </section>
 
-        {/* TIMELINE SECTION */}
-        <section className={styles.timelineSection}>
-          <div className={`container ${styles.timelineContainer}`}>
-            <Reveal delay={0.2} direction="up">
-              <div className={styles.monthBlock}>
-                <div className={styles.monthHeaderWrapper}>
-                  <div 
-                    className={styles.monthPill}
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  >
-                    MENTORIA PARA GESTORES - MÊS {selectedMonth}
-                    <span className={styles.monthToggleIcon}>
-                      {isDropdownOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                    </span>
-                  </div>
-                  
-                  {isDropdownOpen && (
-                    <div className={styles.dropdownMenu}>
-                      {[1, 2, 3, 4].map(m => (
-                        <button 
-                          key={m}
-                          className={`${styles.dropdownItem} ${selectedMonth === m ? styles.activeItem : ''}`}
-                          onClick={() => {
-                            setSelectedMonth(m)
-                            setIsDropdownOpen(false)
-                          }}
-                        >
-                          MÊS {m}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <WeeksCarousel month={selectedMonth} />
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.2} direction="up">
-              <div className={styles.timelineAction}>
-                <a 
-                  href="https://api.whatsapp.com/send?phone=5511984591195&text=Oi%20Keyla%20quero%20aplicar%20a%20mentoria%2C%20me%20conte%20mais%20sobre%20como%20funciona" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className={styles.applyBtn}
-                >
-                  QUERO APLICAR
-                </a>
-              </div>
-            </Reveal>
-
+        {/* TURMAS REDUZIDAS BANNER */}
+        <section className={styles.closeBanner}>
+          <div className={`container ${styles.closeBannerInner}`}>
+            <p className={styles.closeBannerText}>
+              Turmas reduzidas e abrem poucas vezes por ano.
+            </p>
+            <a
+              href="https://api.whatsapp.com/send?phone=5511984591195&text=Oi%20Keyla%2C%20quero%20entrar%20na%20pr%C3%B3xima%20turma%20do%20M%C3%A9todo%20KIN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.closeBannerBtn}
+            >
+              Quero entrar na próxima turma <ArrowRight size={16} />
+            </a>
           </div>
         </section>
 

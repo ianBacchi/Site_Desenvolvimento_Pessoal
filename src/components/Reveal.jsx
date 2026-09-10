@@ -8,7 +8,8 @@ import { motion, useInView, useAnimation } from 'framer-motion'
  */
 export default function Reveal({ children, width = "100%", delay = 0, direction = "up", fullHeight = false }) {
   const ref = useRef(null)
-  
+  const cappedDelay = Math.min(delay, 0.3)
+
   // Trigger animation once when 15% of the element is visible
   const isInView = useInView(ref, { once: true, margin: "0px 0px -15% 0px" })
   const mainControls = useAnimation()
@@ -41,9 +42,9 @@ export default function Reveal({ children, width = "100%", delay = 0, direction 
         variants={variants}
         initial="hidden"
         animate={mainControls}
-        transition={{ 
-          duration: 0.8, 
-          delay: delay, 
+        transition={{
+          duration: 0.45,
+          delay: cappedDelay,
           ease: [0.17, 0.55, 0.1, 1] // Super smooth custom easing (very premium)
         }}
         style={{ height: fullHeight ? "100%" : "auto" }}

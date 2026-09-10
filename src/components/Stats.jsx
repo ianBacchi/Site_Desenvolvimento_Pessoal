@@ -14,6 +14,7 @@ export default function Stats() {
     <section id="numeros" className={styles.section}>
       <div className="container">
         <div className={styles.year}>2026</div>
+        <div className={styles.yearRule} />
         <div className={styles.inner}>
           {stats.map((s, i) => (
             <Reveal key={i} delay={i * 0.15} direction="up">

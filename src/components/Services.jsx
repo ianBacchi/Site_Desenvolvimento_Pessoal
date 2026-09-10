@@ -47,10 +47,6 @@ export default function Services() {
               COMPROVADOS NO MERCADO<br/>
               IMOBILIÁRIO
             </h2>
-            <p className={styles.sectionSubtitle}>
-              Estratégias validadas em gestão, liderança e alta<br/>
-              performance no mercado imobiliário.
-            </p>
           </div>
         </Reveal>
 
