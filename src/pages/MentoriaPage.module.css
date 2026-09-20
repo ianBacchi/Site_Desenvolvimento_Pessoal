@@ -31,7 +31,7 @@
   position: absolute;
   inset: 0;
   /* Dark textured background representation - reduced opacity to make image pop */
-  background: 
+  background:
     linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(30,30,30,0.5) 100%),
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+');
   background-repeat: repeat;

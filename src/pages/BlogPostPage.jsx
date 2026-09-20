@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { X } from 'lucide-react'
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './BlogPostPage.module.css'
@@ -27,7 +28,11 @@ export default function BlogPostPage() {
   return (
     <>
       <main className={styles.main}>
-        
+
+        <Link to="/blog" className={styles.floatingBack} aria-label="Voltar para o Blog">
+          <X size={20} />
+        </Link>
+
         {/* CUSTOM BLOG HEADER */}
         <section className={styles.blogHeader}>
           <div className={`container ${styles.headerContainer}`}>
@@ -78,9 +83,9 @@ export default function BlogPostPage() {
                 })()}
 
                 {/* 3. CONTEÚDO do post (texto, imagens internas, áudio, vídeo — tudo que foi escrito no editor do WordPress) */}
-                <div 
+                <div
                   className={styles.postBody}
-                  dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+                  dangerouslySetInnerHTML={{ __html: post.content.rendered.replace(/<img[^>]*>/, '') }}
                 />
 
                 <div className={styles.backLinkWrapper}>

@@ -28,9 +28,12 @@ export default function Trajetoria() {
             Trajetória construída na rua, no direito e na gestão.
           </h2>
           <p className={styles.text}>
-            Formada em direito com inscrição na OAB e corretora com CRECI ativo,
-            fiz MBA em gestão pela FGV enquanto criava minha filha sozinha e
-            montava a Kin Imóveis do zero.
+            Sou corretora, com CRECI ativo (131.693). Cursei Direito enquanto
+            trabalhava em uma imobiliária, porque via de perto a demora e a
+            dificuldade em fechamentos, que muitas vezes aconteciam no fim de
+            semana, quando se dependia de um escritório jurídico externo.
+            Depois, fiz MBA em Direito Imobiliário pela FGV. Sou advogada, com
+            OAB 411.435.
           </p>
           <p className={styles.text}>
             Hoje sou coautora de dois livros, colunista do ConteúdoImob e

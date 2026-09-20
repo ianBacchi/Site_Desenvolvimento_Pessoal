@@ -19,7 +19,7 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
-  padding-bottom: 10px;
+  padding-bottom: 28px;
 }
 
 .bgTitle {
@@ -27,10 +27,34 @@
   font-size: clamp(6rem, 15vw, 12rem);
   font-weight: 300;
   color: rgba(255, 255, 255, 0.4);
-  line-height: 0.7;
+  line-height: 0.85;
   margin: 0;
   letter-spacing: 0.05em;
-  transform: translateY(20px);
+}
+
+/* X FIXO PARA FECHAR/VOLTAR */
+.floatingBack {
+  position: fixed;
+  top: 180px;
+  left: 20px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--gold-border);
+  color: var(--gold-primary);
+  text-decoration: none;
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.floatingBack:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  transform: scale(1.06);
 }
 
 /* POST SECTION */

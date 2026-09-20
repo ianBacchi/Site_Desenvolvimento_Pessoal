@@ -39,9 +39,13 @@ export default function CountUp({ to, duration = 2, prefix = "", suffix = "" }) 
     window.requestAnimationFrame(animate)
   }, [isInView, to, duration])
 
+  // Pad so the digit count stays fixed during the animation (avoids layout
+  // reflow/jitter as the number grows from 1 digit to 2+ digits).
+  const digits = typeof count === 'number' ? String(count).padStart(String(to.replace(/\D/g, '')).length, '0') : count
+
   return (
-    <span ref={ref}>
-      {prefix}{count}{suffix}
+    <span ref={ref} style={{ fontVariantNumeric: 'tabular-nums' }}>
+      {prefix}{digits}{suffix}
     </span>
   )
 }

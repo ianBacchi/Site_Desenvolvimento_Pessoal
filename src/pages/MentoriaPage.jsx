@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp, Briefcase, TrendingDown, Target, Dices, Check, 
 import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './MentoriaPage.module.css'
-import keylaPhoto from '../assets/keyla-mentoria-hero.png'
+import keylaPhoto from '../assets/keyla-mentoria-hero2.png'
 import logoImg    from '../assets/logo.png'
 import bgMentoria from '../assets/bg-mentoria.png'
 import imgRenata  from '../assets/testi-renata.jpg'
@@ -191,17 +191,17 @@ export default function MentoriaPage() {
                 </p>
               </Reveal>
               <Reveal delay={0.8} direction="up">
-                <a 
-                  href="https://api.whatsapp.com/send?phone=5511984591195&text=Oi%20Keyla%20quero%20aplicar%20a%20mentoria%2C%20me%20conte%20mais%20sobre%20como%20funciona" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://api.whatsapp.com/send?phone=5511984591195&text=Oi%20Keyla%20quero%20aplicar%20a%20mentoria%2C%20me%20conte%20mais%20sobre%20como%20funciona"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={styles.heroBtn}
                 >
                   QUERO APLICAR
                 </a>
               </Reveal>
             </div>
-            
+
             <div className={styles.photoCol}>
               <Reveal delay={0.4} direction="left">
                 <img
@@ -210,6 +210,57 @@ export default function MentoriaPage() {
                   className={styles.keylaPhoto}
                 />
               </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* PLANOS SECTION */}
+        <section id="planos" className={styles.plansSection}>
+          <div className="container">
+            <div className={styles.plansHeader}>
+              <Reveal direction="up">
+                <h2 className={styles.plansTitle}>Planos</h2>
+                <p className={styles.plansSubtitle}>
+                  Escolha o formato ideal para estruturar sua imobiliária.
+                </p>
+              </Reveal>
+            </div>
+
+            <div className={styles.plansGrid}>
+              {plans.map((p, i) => (
+                <Reveal key={p.name} delay={0.1 * i} direction="up" fullHeight={true}>
+                  <div className={`${styles.planCard} ${p.featured ? styles.planCardFeatured : ''}`} style={{ height: '100%' }}>
+                    {p.badge && <span className={styles.planBadge}>{p.badge}</span>}
+
+                    <h3 className={styles.planName}>{p.name}</h3>
+                    <p className={styles.planDesc}>{p.desc}</p>
+
+                    <div className={styles.planPriceBlock}>
+                      <span className={styles.planPrice}>{p.price}</span>
+                      <p className={styles.planInstallment}>{p.installment}</p>
+                    </div>
+                    <p className={styles.planDuration}>{p.duration}</p>
+
+                    <ul className={styles.planFeatures}>
+                      {p.features.map(f => (
+                        <li key={f}>
+                          <Check size={16} className={styles.planCheck} />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <a
+                      href={p.whats}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={p.featured ? styles.planBtnFeatured : styles.planBtnOutline}
+                    >
+                      {p.cta} <ArrowRight size={16} />
+                    </a>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
@@ -245,8 +296,8 @@ export default function MentoriaPage() {
             <Reveal delay={0.1} direction="up">
               <div>
                 <h2 className={styles.proofTitle}>
-                  De <CountUp to="66" prefix="R$ " suffix=" milhões" duration={2} /><br />
-                  para <CountUp to="97" prefix="R$ " suffix=" milhões" duration={2} />
+                  De R$ 66 milhões<br />
+                  para R$ 97 milhões
                 </h2>
               </div>
             </Reveal>
@@ -300,57 +351,6 @@ export default function MentoriaPage() {
                 </button>
               </div>
             </Reveal>
-          </div>
-        </section>
-
-        {/* PLANOS SECTION */}
-        <section id="planos" className={styles.plansSection}>
-          <div className="container">
-            <div className={styles.plansHeader}>
-              <Reveal direction="up">
-                <h2 className={styles.plansTitle}>Planos</h2>
-                <p className={styles.plansSubtitle}>
-                  Escolha o formato ideal para estruturar sua imobiliária.
-                </p>
-              </Reveal>
-            </div>
-
-            <div className={styles.plansGrid}>
-              {plans.map((p, i) => (
-                <Reveal key={p.name} delay={0.1 * i} direction="up" fullHeight={true}>
-                  <div className={`${styles.planCard} ${p.featured ? styles.planCardFeatured : ''}`} style={{ height: '100%' }}>
-                    {p.badge && <span className={styles.planBadge}>{p.badge}</span>}
-
-                    <h3 className={styles.planName}>{p.name}</h3>
-                    <p className={styles.planDesc}>{p.desc}</p>
-
-                    <div className={styles.planPriceBlock}>
-                      <span className={styles.planPrice}>{p.price}</span>
-                      <p className={styles.planInstallment}>{p.installment}</p>
-                    </div>
-                    <p className={styles.planDuration}>{p.duration}</p>
-
-                    <ul className={styles.planFeatures}>
-                      {p.features.map(f => (
-                        <li key={f}>
-                          <Check size={16} className={styles.planCheck} />
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <a
-                      href={p.whats}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={p.featured ? styles.planBtnFeatured : styles.planBtnOutline}
-                    >
-                      {p.cta} <ArrowRight size={16} />
-                    </a>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
           </div>
         </section>
 

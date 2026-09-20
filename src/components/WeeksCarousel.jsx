@@ -31,16 +31,29 @@ const mentoriaData = {
 export default function WeeksCarousel({ month }) {
   const scrollRef = useRef(null)
   const exactScroll = useRef(0)
-  
+
   const [isHovered, setIsHovered] = useState(false)
   const [isInteracting, setIsInteracting] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
 
   const weeks = mentoriaData[month] || []
 
+  // No mobile o auto-scroll em loop infinito brigava com o gesto de swipe do
+  // dedo e ficava "pulando". Nesses telas desligamos o auto-play e deixamos
+  // scroll manual simples.
   useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)')
+    setIsMobile(mq.matches)
+    const handler = (e) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+
+  useEffect(() => {
+    if (isMobile) return
     let animationFrameId
     const scroll = () => {
       const el = scrollRef.current
@@ -81,10 +94,14 @@ export default function WeeksCarousel({ month }) {
     
     animationFrameId = requestAnimationFrame(scroll)
     return () => cancelAnimationFrame(animationFrameId)
-  }, [isHovered, isInteracting, isDragging])
+  }, [isHovered, isInteracting, isDragging, isMobile])
 
   // Reset when month changes
   useEffect(() => {
+    if (isMobile) {
+      if (scrollRef.current) scrollRef.current.scrollLeft = 0
+      return
+    }
     if (scrollRef.current) {
       const firstGroup = scrollRef.current.firstElementChild
       const jumpPoint = firstGroup ? firstGroup.offsetWidth : 0
@@ -92,7 +109,7 @@ export default function WeeksCarousel({ month }) {
       scrollRef.current.scrollLeft = jumpPoint
       exactScroll.current = jumpPoint
     }
-  }, [month])
+  }, [month, isMobile])
 
   // Mouse Drag Logic
   const handleMouseDown = (e) => {
@@ -154,11 +171,17 @@ export default function WeeksCarousel({ month }) {
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
     >
-      {/* 4 grupos para garantir espaço infinito para os dois lados (rolagem de segurança) */}
-      {renderTrackGroup('track-1')}
-      {renderTrackGroup('track-2')}
-      {renderTrackGroup('track-3')}
-      {renderTrackGroup('track-4')}
+      {isMobile ? (
+        renderTrackGroup('track-mobile')
+      ) : (
+        <>
+          {/* 4 grupos para garantir espaço infinito para os dois lados (rolagem de segurança) */}
+          {renderTrackGroup('track-1')}
+          {renderTrackGroup('track-2')}
+          {renderTrackGroup('track-3')}
+          {renderTrackGroup('track-4')}
+        </>
+      )}
     </div>
   )
 }
