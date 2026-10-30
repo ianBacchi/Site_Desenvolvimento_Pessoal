@@ -2,8 +2,10 @@ import Footer     from '../components/Footer'
 import WhatsApp   from '../components/WhatsApp'
 import styles     from './LivrosPage.module.css'
 import Reveal     from '../components/Reveal'
-import livrosHero from '../assets/livro-gestao-imob2.jpg'
+import livrosHero from '../assets/livro-gestao-imob-foto.png'
 import keylaLivro3 from '../assets/keyla-livro3.jpg'
+import keylaLivroHero from '../assets/keyla-livro-hero.jpg'
+import livroPareDeTorcer from '../assets/livro-pare-de-torcer.png'
 
 export default function LivrosPage() {
   return (
@@ -17,8 +19,8 @@ export default function LivrosPage() {
             <div className={styles.heroPhotoCol}>
               <Reveal delay={0.2} direction="scale">
                 <img
-                  src={keylaLivro3}
-                  alt="Keyla Kin com o livro Experiências de Mulheres no Mercado Imobiliário 2"
+                  src={keylaLivroHero}
+                  alt="Keyla Kin com seus três livros"
                   className={styles.heroBooksImg}
                 />
               </Reveal>
@@ -59,7 +61,7 @@ export default function LivrosPage() {
             <Reveal delay={0.1} direction="up" fullHeight={true}>
               <div className={styles.bookCard}>
                 <div className={`${styles.bookCardImgWrap} ${styles.bookCardImgWrapSquare}`}>
-                  <img src={livrosHero} alt="Gestão para Imobiliária" className={styles.bookCardImg} />
+                  <img src={livrosHero} alt="Gestão para Imobiliária" className={`${styles.bookCardImg} ${styles.bookCardImgGestao}`} />
                 </div>
                 <div className={styles.bookCardBody}>
                   <p className={styles.bookCardMeta}>PUBLICADO · 2025</p>
@@ -103,15 +105,24 @@ export default function LivrosPage() {
             </Reveal>
 
             <Reveal delay={0.3} direction="up" fullHeight={true}>
-              <div className={`${styles.bookCard} ${styles.bookCardSolo}`}>
+              <div className={styles.bookCard}>
+                <div className={`${styles.bookCardImgWrap} ${styles.bookCardImgWrapSquare}`}>
+                  <img src={livroPareDeTorcer} alt="Pare de Torcer. Comece a Gerir." className={`${styles.bookCardImg} ${styles.bookCardImgSolo}`} />
+                </div>
                 <div className={styles.bookCardBody}>
-                  <p className={styles.bookCardMeta}>AUTORIA SOLO</p>
+                  <p className={styles.bookCardMeta}>LANÇAMENTO · AUTORIA SOLO</p>
                   <h3 className={styles.bookCardTitle}>Pare de Torcer. Comece a Gerir.</h3>
                   <p className={styles.bookCardExcerpt}>
                     Manual prático de ações para que gestores coloquem dentro da imobiliária: reunir dados, traçar estratégia e aplicar para aumentar o...
                   </p>
-                  <p className={styles.bookCardAuthor}>Keyla Kin</p>
-                  <span className={styles.bookCardTag}>EM PRODUÇÃO · DEZEMBRO 2026</span>
+                  <a
+                    href="https://api.whatsapp.com/send?phone=5511984591195&text=Oi%20Keyla%2C%20quero%20saber%20mais%20sobre%20como%20comprar%20o%20livro%20Pare%20de%20Torcer.%20Comece%20a%20Gerir.!"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.bookCardBtn}
+                  >
+                    QUERO ESSE LIVRO
+                  </a>
                 </div>
               </div>
             </Reveal>

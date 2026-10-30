@@ -40,6 +40,7 @@
   height: 56px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top;
   border: 1px solid var(--gold-border);
   margin-bottom: 18px;
 }
@@ -51,6 +52,35 @@
   line-height: 1.65;
   margin-bottom: 20px;
   flex: 1;
+}
+
+.clamped {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  overflow: hidden;
+  flex: 0 0 auto;
+  margin-bottom: 10px;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold-primary);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.toggle:hover {
+  opacity: 0.8;
 }
 
 .name {

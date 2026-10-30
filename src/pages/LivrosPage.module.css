@@ -174,11 +174,19 @@
 }
 
 .bookCardImgWrapSquare {
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1.15;
 }
 
 .bookCardImgWrapSquare .bookCardImg {
   object-position: top;
+}
+
+.bookCardImgWrapSquare .bookCardImgGestao {
+  object-position: 50% 0%;
+}
+
+.bookCardImgWrapSquare .bookCardImgSolo {
+  object-position: 76% center;
 }
 
 .bookCardBody {

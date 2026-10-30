@@ -44,7 +44,7 @@ const plans = [
     name: 'Diagnóstico KIN',
     desc: 'Para quem quer enxergar onde está o gargalo antes de começar. Um dia de análise profunda da sua operação.',
     price: 'R$ 3.200',
-    installment: 'À vista ou em até 6x no cartão (juros da operadora)',
+    installment: 'À vista ou em até 6x de R$ 584,00',
     duration: 'Imersão de 1 dia',
     features: [
       'Análise do funil de vendas atual',
@@ -62,7 +62,7 @@ const plans = [
     featured: true,
     desc: 'A mentoria que apliquei na Kin Imóveis para sair de R$ 66 milhões para R$ 97 milhões em VGV em 12 meses.',
     price: 'R$ 7.000',
-    installment: 'À vista ou em até 12x no cartão (juros da operadora) ou no boleto sem juros de R$ 1.250,00',
+    installment: 'À vista ou em até 6x de R$ 1.250,00',
     duration: '4 meses de mentoria em grupo',
     features: [
       'Sessões semanais ao vivo em grupo',
@@ -75,17 +75,16 @@ const plans = [
     whats: WHATS_BASE + encodeURIComponent('Oi Keyla, quero entrar na próxima turma do Método KIN'),
   },
   {
-    name: 'Mentoria Individual',
-    desc: 'Para donos que querem olhar a fundo na sua imobiliária com encontros personalizados e acompanhamento próximo.',
-    price: 'R$ 11.500',
-    installment: 'À vista ou em até 12x no cartão (juros da operadora) ou no boleto sem juros de R$ 2.000,00',
+    name: 'Mentoria Individual Método KIN',
+    desc: '4 meses de acompanhamento 1:1 com Keyla Kin, com pauta construída sobre a sua imobiliária.',
+    price: 'R$ 14.000',
+    installment: 'À vista ou em até 6x de R$ 2.500,00',
     duration: '4 meses de acompanhamento 1:1',
     features: [
-      'Encontros quinzenais 1:1 com Keyla Kin',
-      'Diagnóstico KIN com direito a 1 visita na Kin Imóveis',
-      'Plano de implementação sob medida',
-      'Intermediação direta com sua equipe',
-      'Acesso aos materiais do Método KIN',
+      'Mês 1: encontros semanais para diagnóstico e plano de ação',
+      'Meses 2 a 4: encontros quinzenais de execução e ajuste',
+      'Meio dia de imersão presencial dentro da Kin Imóveis, vendo a operação funcionando',
+      'Curso de Atendimento Inicial ao vivo, ministrado por Keyla, para a sua equipe de corretores',
     ],
     cta: 'Quero a mentoria individual',
     whats: WHATS_BASE + encodeURIComponent('Oi Keyla, quero saber mais sobre a Mentoria Individual'),
@@ -147,7 +146,7 @@ const faqs = [
   },
   {
     q: 'Quanto custa?',
-    a: 'R$ 7.000, à vista ou em até 12x no cartão (juros da operadora), ou no boleto sem juros de R$ 1.250,00.',
+    a: 'R$ 7.000, à vista ou em até 6x de R$ 1.250,00.',
   },
   {
     q: 'Preciso ter equipe grande?',
