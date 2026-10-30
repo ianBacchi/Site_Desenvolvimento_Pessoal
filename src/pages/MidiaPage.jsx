@@ -10,6 +10,8 @@ import imgBastidores from '../assets/home-strip-5.jpg' // Falcon
 import imgEvento2    from '../assets/home-strip-4.jpg' // RE/MAX
 import imgTerra      from '../assets/reportagem-terra.png'
 import imgValor      from '../assets/reportagem-valor.png'
+import imgTerraLuxo  from '../assets/reportagem-terra-luxo.png'
+import imgGazeta     from '../assets/reportagem-gazeta-eleicao.png'
 
 const podcasts = [
   {
@@ -36,6 +38,20 @@ const articles = [
     thumb: imgValor,
     title: 'Keyla Kin amplia atuação internacional no setor imobiliário',
     href: 'https://valor.globo.com/patrocinado/dino/noticia/2026/04/08/keyla-kin-amplia-atuacao-internacional-no-setor-imobiliario-1.ghtml',
+  },
+  {
+    outlet: 'Terra',
+    thumb: imgTerraLuxo,
+    thumbPos: '50% 45%',
+    title: 'O novo mapa do luxo paulistano: por que morar melhor já não significa morar maior',
+    href: 'https://terra.afontemagazine.com.br/o-novo-mapa-do-luxo-paulistano-por-que-morar-melhor-ja-nao-significa-morar-maior/',
+  },
+  {
+    outlet: 'Gazeta da Semana',
+    thumb: imgGazeta,
+    thumbPos: '50% 33%',
+    title: 'Eleição e mercado imobiliário: o que muda no bolso do comprador e na ponta final de vendas?',
+    href: 'https://gazetadasemana.com.br/noticia/305363/eleicao-e-mercado-imobiliario-o-que-muda-no-bolso-do-comprador-e-na-ponta-final-de-vendas',
   },
 ]
 
@@ -110,7 +126,7 @@ export default function MidiaPage() {
                 <Reveal key={a.href} delay={0.1 * i} direction="up" fullHeight>
                   <a href={a.href} target="_blank" rel="noopener noreferrer" className={styles.articleCard}>
                     <div className={styles.articleThumb}>
-                      <img src={a.thumb} alt={`Reportagem ${a.outlet}`} className={styles.articleImg} />
+                      <img src={a.thumb} alt={`Reportagem ${a.outlet}`} className={styles.articleImg} style={a.thumbPos ? { objectPosition: a.thumbPos } : undefined} />
                     </div>
                     <div className={styles.articleBody}>
                       <span className={styles.outlet}>{a.outlet}</span>

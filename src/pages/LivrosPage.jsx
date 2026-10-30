@@ -3,7 +3,7 @@ import WhatsApp   from '../components/WhatsApp'
 import styles     from './LivrosPage.module.css'
 import Reveal     from '../components/Reveal'
 import livrosHero from '../assets/livro-gestao-imob-foto.png'
-import keylaLivro3 from '../assets/keyla-livro3.jpg'
+import keylaLivro3 from '../assets/livro-experiencias-foto.png'
 import keylaLivroHero from '../assets/keyla-livro-hero.jpg'
 import livroPareDeTorcer from '../assets/livro-pare-de-torcer.png'
 
@@ -84,7 +84,7 @@ export default function LivrosPage() {
             <Reveal delay={0.2} direction="up" fullHeight={true}>
               <div className={styles.bookCard}>
                 <div className={`${styles.bookCardImgWrap} ${styles.bookCardImgWrapSquare}`}>
-                  <img src={keylaLivro3} alt="Experiências de Mulheres no Mercado Imobiliário 2" className={styles.bookCardImg} />
+                  <img src={keylaLivro3} alt="Experiências de Mulheres no Mercado Imobiliário 2" className={`${styles.bookCardImg} ${styles.bookCardImgExperiencias}`} />
                 </div>
                 <div className={styles.bookCardBody}>
                   <p className={styles.bookCardMeta}>PUBLICADO · 2026</p>
